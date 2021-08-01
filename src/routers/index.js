@@ -1,11 +1,11 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import Grid from "../views/Grid.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Grid",
+    component: Grid,
   },
   {
     path: "/about",
@@ -23,4 +23,4 @@ const router = createRouter({
   routes,
 });
 
-export default router;
+export { router as default, routes };

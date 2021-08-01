@@ -1,30 +1,66 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <a-layout>
+    <a-layout-header class="layout-header">
+      <h1>Hello</h1>
+      <a-menu theme="dark" mode="horizontal">
+        <a-menu-item>ok</a-menu-item>
+      </a-menu>
+    </a-layout-header>
+
+    <a-layout class="container">
+      <a-layout-sider theme="light">
+        <a-menu theme="" :default-active="activeIndex">
+          <!-- <a-menu-item key="1">
+            <router-link to="/">Home</router-link>
+          </a-menu-item>
+          <a-menu-item key="2">
+            <router-link to="/about">About</router-link>
+          </a-menu-item> -->
+          <a-menu-item
+            v-for="(item, index) in routes"
+            :key="index"
+            :index="index"
+          >
+            <router-link :to="item.path">{{ item.name }}</router-link>
+          </a-menu-item>
+        </a-menu>
+      </a-layout-sider>
+      <a-layout>
+        <a-layout-content class="content">
+          <router-view />
+        </a-layout-content>
+      </a-layout>
+    </a-layout>
+  </a-layout>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { routes } from "@/routers/index.js";
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: "App",
+  data: () => {
+    return {
+      routes,
+      activeIndex: 1,
+    };
+  },
+};
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+<style lang="less">
+.layout-header {
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    color: #fff;
+  }
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.container {
+  display: flex;
+  height: calc(100vh - 64px);
+}
+.content {
+  padding: 20px;
 }
 </style>
