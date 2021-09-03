@@ -24,7 +24,8 @@ export default {
   components: {},
   created() {},
   mounted() {
-    console.log(this.$refs.table.rows[0].cells);
+    console.log(`table tr:`, this.$refs.table.rows);
+    console.log(`table th:`, this.$refs.table.rows[0].cells);
   },
 };
 </script>

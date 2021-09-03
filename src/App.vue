@@ -9,20 +9,12 @@
 
     <a-layout class="container">
       <a-layout-sider theme="light">
-        <a-menu theme="" :default-active="activeIndex">
-          <!-- <a-menu-item key="1">
-            <router-link to="/">Home</router-link>
-          </a-menu-item>
-          <a-menu-item key="2">
-            <router-link to="/about">About</router-link>
-          </a-menu-item> -->
-          <a-menu-item
-            v-for="(item, index) in routes"
-            :key="index"
-            :index="index"
-          >
-            <router-link :to="item.path">{{ item.name }}</router-link>
-          </a-menu-item>
+        <a-menu theme="dark" :selectedKeys="selectKeys" @click="handleClick">
+          <template v-for="item in routes">
+            <a-menu-item v-if="item.path !== '/'" :key="item.path">
+              <router-link :to="item.path">{{ item.name }}</router-link>
+            </a-menu-item>
+          </template>
         </a-menu>
       </a-layout-sider>
       <a-layout>
@@ -36,14 +28,33 @@
 
 <script>
 import { routes } from "@/routers/index.js";
+// import { reactive, toRefs } from "vue";
 
 export default {
   name: "App",
+  // setup() {
+  //   const state = reactive({
+  //     routes,
+  //     selectKeys: ["/grid"],
+  //   });
+
+  //   return { ...toRefs(state) };
+  // },
   data: () => {
     return {
       routes,
-      activeIndex: 1,
+      selectKeys: ["/grid"],
     };
+  },
+
+  created() {
+    // console.log(this);
+  },
+
+  methods: {
+    handleClick(e) {
+      this.selectKeys = [e.key];
+    },
   },
 };
 </script>

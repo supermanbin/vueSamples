@@ -4,6 +4,10 @@ import Grid from "../views/Grid.vue";
 const routes = [
   {
     path: "/",
+    redirect: "/grid",
+  },
+  {
+    path: "/grid",
     name: "Grid",
     component: Grid,
   },
@@ -16,11 +20,21 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/spacex",
+    name: "SpaceX",
+    component: () =>
+      import(/* webpackChunkName: "spacex" */ "../views/SpaceX.vue"),
+  },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+router.beforeEach((guard, from) => {
+  console.log(guard, from);
 });
 
 export { router as default, routes };

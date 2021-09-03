@@ -20,5 +20,10 @@ yarn build
 yarn lint
 ```
 
+### Commit standard
+```
+yarn commit
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
