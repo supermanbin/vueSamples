@@ -9,7 +9,7 @@
 
     <a-layout class="container">
       <a-layout-sider theme="light">
-        <a-menu theme="dark" :selectedKeys="selectKeys" @click="handleClick">
+        <a-menu theme="dark" :selectedKeys="selectKeys">
           <template v-for="item in routes">
             <a-menu-item v-if="item.path !== '/'" :key="item.path">
               <router-link :to="item.path">{{ item.name }}</router-link>
@@ -28,32 +28,28 @@
 
 <script>
 import { routes } from "@/routers/index.js";
-// import { reactive, toRefs } from "vue";
+import { mapState } from "vuex";
 
 export default {
   name: "App",
-  // setup() {
-  //   const state = reactive({
-  //     routes,
-  //     selectKeys: ["/grid"],
-  //   });
-
-  //   return { ...toRefs(state) };
-  // },
   data: () => {
     return {
       routes,
-      selectKeys: ["/grid"],
     };
   },
 
-  created() {
-    // console.log(this);
+  computed: {
+    ...mapState({
+      selectKeys: (state) => state.menuSelectKeys,
+    }),
   },
 
+  created() {},
+
   methods: {
-    handleClick(e) {
-      this.selectKeys = [e.key];
+    handleClick() {
+      //
+      // this.$store.commit("changeMenuSelectKeys", [e.key]);
     },
   },
 };

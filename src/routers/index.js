@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Grid from "../views/Grid.vue";
+import store from "../store";
 
 const routes = [
   {
@@ -25,6 +26,7 @@ const routes = [
     name: "SpaceX",
     component: () =>
       import(/* webpackChunkName: "spacex" */ "../views/SpaceX.vue"),
+    children: [],
   },
 ];
 
@@ -33,8 +35,13 @@ const router = createRouter({
   routes,
 });
 
+/**
+ * 路由
+ */
 router.beforeEach((guard, from) => {
   console.log(guard, from);
+  // 刷新页面重置菜单选中状态
+  store.commit("changeMenuSelectKeys", [guard.path]);
 });
 
 export { router as default, routes };
