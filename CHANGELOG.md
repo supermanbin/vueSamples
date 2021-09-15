@@ -7,6 +7,7 @@
  all | provide & inject使用 | [81f4ae9](https://github.com/supermanbin/vueSamples/commit/81f4ae9)
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
+ revert | test git revert | [7c62b6b](https://github.com/supermanbin/vueSamples/commit/7c62b6b)
  spaceX | spaceX | [f8ff03a](https://github.com/supermanbin/vueSamples/commit/f8ff03a)
 
 
