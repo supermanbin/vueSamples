@@ -1,27 +1,32 @@
 <template>
   <h1>SpaceX</h1>
-  <a-list :data-source="allRockets">
+  <a-list :data-source="allRockets" :loading="loading">
     <template #renderItem="{ item }">
-      <a-list-item>
-        <a-list-item-meta :description="item.description"> </a-list-item-meta>
-        <template #extra>
+      <a-list-item v-if="item.details">
+        <a-list-item-meta :description="item.details">
+          <!-- <template #title>
+            {{ item.title }}
+          </template> -->
+        </a-list-item-meta>
+        <!-- <template #extra>
           <img width="272" alt="logo" :src="item.flickr_images[0]" />
-        </template>
+        </template> -->
       </a-list-item>
     </template>
   </a-list>
 </template>
 
 <script>
-import baseAxios from "@/httpClient/http.js";
+import { getLanches } from "@/services/index.js";
 import { ref, onMounted } from "vue";
 
 export default {
   setup() {
     let allRockets = ref([]);
+    let loading = ref(true);
     const getAllRockets = async () => {
-      const response = await baseAxios.get("/v4/rockets");
-      console.log(response);
+      const response = await getLanches();
+      loading.value = false;
       allRockets.value = response.data;
       console.log("allRockets=======>", allRockets);
     };
@@ -29,12 +34,10 @@ export default {
     onMounted(getAllRockets);
 
     return {
+      loading,
       allRockets,
       getAllRockets,
     };
-  },
-  watch: {
-    data: "getAllRockets",
   },
 };
 </script>
