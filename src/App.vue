@@ -10,7 +10,7 @@
     <a-layout class="container">
       <a-layout-sider theme="light">
         <a-menu theme="dark" :selectedKeys="selectKeys">
-          <template v-for="item in routes">
+          <template v-for="item in routesRef">
             <a-menu-item v-if="item.path !== '/'" :key="item.path">
               <router-link :to="item.path">{{ item.name }}</router-link>
             </a-menu-item>
@@ -28,21 +28,32 @@
 
 <script>
 import { routes } from "@/routers/index.js";
-import { mapState } from "vuex";
+import { useStore } from "vuex";
+import { ref, computed } from "vue";
 
 export default {
   name: "App",
-  data: () => {
+  // data: () => {
+  //   return {
+  //     routes,
+  //   };
+  // },
+
+  setup() {
+    const store = useStore();
+    const routesRef = ref(routes);
+    const selectKeys = computed(() => store.state.menuSelectKeys);
     return {
-      routes,
+      routesRef,
+      selectKeys,
     };
   },
 
-  computed: {
-    ...mapState({
-      selectKeys: (state) => state.menuSelectKeys,
-    }),
-  },
+  // computed: {
+  //   ...mapState({
+  //     selectKeys: (state) => state.menuSelectKeys,
+  //   }),
+  // },
 
   created() {},
 

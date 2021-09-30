@@ -5,6 +5,7 @@
 --|--|--
  All | add git commit standard | [986a9f2](https://github.com/supermanbin/vueSamples/commit/986a9f2)
  all | provide & inject使用 | [81f4ae9](https://github.com/supermanbin/vueSamples/commit/81f4ae9)
+ counter tab | vue provide, inject & vuex count 使用方式 | [d66facc](https://github.com/supermanbin/vueSamples/commit/d66facc)
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
  revert 02 | revert 02 | [fec9904](https://github.com/supermanbin/vueSamples/commit/fec9904)
