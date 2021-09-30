@@ -11,7 +11,6 @@ export default {
   name: "CounterAction",
   setup() {
     const useCount = inject("count");
-    console.log(useCount);
     const useAdd = inject("addHandle");
     const useMinus = inject("minusHandle");
 
