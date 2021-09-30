@@ -17,18 +17,17 @@
 </template>
 
 <script>
-import { getLanches } from "@/services/index.js";
-import { ref, onMounted } from "vue";
+import { onMounted, computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
   setup() {
-    let allRockets = ref([]);
-    let loading = ref(true);
-    const getAllRockets = async () => {
-      const response = await getLanches();
-      loading.value = false;
-      allRockets.value = response.data;
-      console.log("allRockets=======>", allRockets);
+    const store = useStore();
+    const allRockets = computed(() => store.state.spaceX.lanches);
+    const loading = computed(() => store.state.spaceX.loading);
+
+    const getAllRockets = () => {
+      store.dispatch("spaceX/getAllLanches");
     };
 
     onMounted(getAllRockets);
