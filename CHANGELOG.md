@@ -16,6 +16,7 @@
 
 范围|描述|commitId
 --|--|--
+ - | Revert "feat(revert 02): revert 02" | [62b2fb6](https://github.com/supermanbin/vueSamples/commit/62b2fb6)
  - | first commit | [26af15d](https://github.com/supermanbin/vueSamples/commit/26af15d)
  - | init | [5b2a096](https://github.com/supermanbin/vueSamples/commit/5b2a096)
 

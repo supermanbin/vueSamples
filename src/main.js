@@ -3,10 +3,18 @@ import App from "./App.vue";
 import router from "./routers";
 import store from "./store";
 
-import { Button, Layout, Menu, List } from "ant-design-vue";
+import { Button, Layout, Menu, List, Tabs } from "ant-design-vue";
 
 import "@/assets/styles/index.less";
 
 const app = createApp(App);
-app.use(store).use(router).use(Button).use(Layout).use(Menu).use(List);
+app
+  .use(store)
+  .use(router)
+  .use(Button)
+  .use(Layout)
+  .use(Menu)
+  .use(List)
+  .use(Tabs);
+
 app.mount("#app");
