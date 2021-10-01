@@ -13,6 +13,15 @@ export default {
     const useCount = inject("count");
     const useAdd = inject("addHandle");
     const useMinus = inject("minusHandle");
+    // const store = useStore();
+    // const count = computed(() => store.state.counter.count);
+
+    // const addHandle = () => {
+    //   store.dispatch("counter/add");
+    // };
+    // const minusHandle = () => {
+    //   store.dispatch("counter/minus");
+    // };
 
     return {
       useCount,

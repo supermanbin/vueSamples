@@ -5,7 +5,7 @@
       <CounterAction></CounterAction>
     </a-tab-pane>
     <a-tab-pane key="VUEX_COUNT" tab="Vuex Count">
-      <h2>VUEX_COUNT {{ count }}</h2>
+      <CounterOfVuex></CounterOfVuex>
     </a-tab-pane>
   </a-tabs>
 </template>
@@ -13,12 +13,14 @@
 <script>
 import { ref, provide } from "vue";
 import CounterAction from "./CounterAction.vue";
+import CounterOfVuex from "./CounterOfVuex.vue";
 
 export default {
   components: {
     CounterAction,
+    CounterOfVuex,
   },
-  setup(props) {
+  setup() {
     // count
     const count = ref(0);
 
@@ -38,8 +40,6 @@ export default {
 
     // tab default key
     const activeKey = ref("PROVIDE_COUNT");
-
-    console.log(props);
 
     return {
       count,
