@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Grid from "../views/Grid.vue";
+import Counter from "../views/counter/Counter.vue";
+import CounterOfPureVue from "../views/counter/CounterOfPureVue.vue";
 import store from "../store";
 
 const routes = [
@@ -15,11 +17,21 @@ const routes = [
   {
     path: "/counter",
     name: "Counter",
+    redirect: "/counter/pureVue",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "counter" */ "../views/counter/Counter.vue"),
+    component: Counter,
+    children: [
+      {
+        path: "pureVue",
+        component: CounterOfPureVue,
+      },
+      {
+        path: "vuex",
+        component: CounterOfPureVue,
+      },
+    ],
   },
   {
     path: "/spacex",
