@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Grid from "../views/Grid.vue";
 import Counter from "../views/counter/Counter.vue";
 import CounterOfPureVue from "../views/counter/CounterOfPureVue.vue";
+import CounterOfVuex from "../views/counter/CounterOfVuex.vue";
 import store from "../store";
 
 const routes = [
@@ -29,7 +30,7 @@ const routes = [
       },
       {
         path: "vuex",
-        component: CounterOfPureVue,
+        component: CounterOfVuex,
       },
     ],
   },
@@ -50,10 +51,11 @@ const router = createRouter({
 /**
  * 路由
  */
-router.beforeEach((guard, from) => {
-  console.log(guard, from);
-  // 刷新页面重置菜单选中状态
-  store.commit("changeMenuSelectKeys", [guard.path]);
+router.beforeEach((guard) => {
+  if (guard.path.split("/").length) {
+    // 刷新页面重置菜单选中状态
+    store.commit("changeMenuSelectKeys", ["/" + guard.path.split("/")[1]]);
+  }
 });
 
 export { router as default, routes };
