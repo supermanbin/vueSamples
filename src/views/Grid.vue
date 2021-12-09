@@ -1,31 +1,27 @@
 <template>
-  <table ref="table">
-    <tr>
-      <th>header 1</th>
-      <th>header 2</th>
-      <th>header 3</th>
-      <th>header 4</th>
-    </tr>
-    <tr>
-      <td>td 1</td>
-      <td>td 2</td>
-      <td>td 3</td>
-      <td>td 4</td>
-    </tr>
-  </table>
+  <div :style="{ 'font-size': color }">bbbbbb</div>
+  <k-select @change-size="onChangeSize" />
+  <k-button>aaa</k-button>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+import { ref } from "vue";
+import kSelect from "@/components/kSelect.vue";
+import kButton from "@/components/kButton";
 
 export default {
   name: "Grid",
-  components: {},
+  components: { kSelect, kButton },
   created() {},
-  mounted() {
-    console.log(`table tr:`, this.$refs.table.rows);
-    console.log(`table th:`, this.$refs.table.rows[0].cells);
+  mounted() {},
+  setup() {
+    const color = ref("12px");
+    const onChangeSize = (c) => {
+      color.value = c;
+    };
+    return { color, onChangeSize };
   },
+  methods: {},
 };
 </script>

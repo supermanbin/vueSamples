@@ -1,4 +1,4 @@
-# 0.1.0 (2021-12-08)
+# 0.1.0 (2021-12-09)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -17,6 +17,7 @@
  revert | test revert | [a9bee5a](https://github.com/supermanbin/vueSamples/commit/a9bee5a)
  spaceX request | 使用vuex做状态管理 | [80e1b68](https://github.com/supermanbin/vueSamples/commit/80e1b68)
  spaceX | spaceX | [f8ff03a](https://github.com/supermanbin/vueSamples/commit/f8ff03a)
+ vuex | vuex | [e3b5168](https://github.com/supermanbin/vueSamples/commit/e3b5168)
 
 
 范围|描述|commitId
