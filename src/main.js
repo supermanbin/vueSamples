@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./routers";
 import store from "./store";
 
-import { Button, Layout, Menu, List, Tabs } from "ant-design-vue";
+import { Button, Layout, Menu, List, Tabs, Drawer } from "ant-design-vue";
 
 import "@/assets/styles/index.less";
 
@@ -15,6 +15,7 @@ app
   .use(Layout)
   .use(Menu)
   .use(List)
+  .use(Drawer)
   .use(Tabs);
 
 app.mount("#app");
