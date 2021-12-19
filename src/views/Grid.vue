@@ -1,18 +1,10 @@
 <template>
-  <table ref="table">
-    <tr>
-      <th>header 1</th>
-      <th>header 2</th>
-      <th>header 3</th>
-      <th>header 4</th>
-    </tr>
-    <tr>
-      <td>td 1</td>
-      <td>td 2</td>
-      <td>td 3</td>
-      <td>td 4</td>
-    </tr>
-  </table>
+  <div class="grid">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+  </div>
 </template>
 
 <script>
@@ -24,8 +16,25 @@ export default {
   components: {},
   created() {},
   mounted() {
-    console.log(`table tr:`, this.$refs.table.rows);
-    console.log(`table th:`, this.$refs.table.rows[0].cells);
+    // console.log(`table tr:`, this.$refs.table.rows);
+    // console.log(`table th:`, this.$refs.table.rows[0].cells);
   },
 };
 </script>
+
+<style scoped>
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.grid-item {
+  height: 100px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

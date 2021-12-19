@@ -16,6 +16,12 @@ const routes = [
     component: Grid,
   },
   {
+    path: "/flex",
+    name: "Flex",
+    component: () =>
+      import(/* webpackChunkName: "spacex" */ "../views/Flex.vue"),
+  },
+  {
     path: "/counter",
     name: "Counter",
     redirect: "/counter/pureVue",
