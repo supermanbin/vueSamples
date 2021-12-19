@@ -1,40 +1,84 @@
 <template>
-  <div class="grid">
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>
-    <div class="grid-item">4</div>
-  </div>
+  <div :style="{ 'font-size': size }">bbbbbb</div>
+  <k-select @change-size="onChangeSize" />
+  <k-button @click="showDrawer">aaa</k-button>
+  <a-drawer
+    title="Drawer aaaa"
+    :visible="drawerVisible"
+    :width="500"
+    maskClosable
+    @close="
+      () => {
+        drawerVisible = false;
+      }
+    "
+  >
+    <div class="collapse">
+      <div class="collapse-item">
+        <div class="collapse-item__title">collapse title</div>
+        <div class="collapse-item__body">collapse content</div>
+      </div>
+      <div class="collapse-item">
+        <div class="collapse-item__title">collapse title</div>
+        <div class="collapse-item__body">collapse content</div>
+      </div>
+      <div class="collapse-item">
+        <div class="collapse-item__title">collapse title</div>
+        <div class="collapse-item__body">collapse content</div>
+      </div>
+    </div>
+  </a-drawer>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+import { ref } from "vue";
+import kSelect from "@/components/kSelect.vue";
+import kButton from "@/components/kButton";
 
 export default {
   name: "Grid",
-  components: {},
+  components: { kSelect, kButton },
   created() {},
-  mounted() {
-    // console.log(`table tr:`, this.$refs.table.rows);
-    // console.log(`table th:`, this.$refs.table.rows[0].cells);
+  mounted() {},
+  setup() {
+    const size = ref("12px");
+    const onChangeSize = (c) => {
+      size.value = c;
+    };
+
+    const drawerVisible = ref(false);
+
+    const showDrawer = () => {
+      drawerVisible.value = true;
+    };
+
+    return { size, drawerVisible, onChangeSize, showDrawer };
   },
+  methods: {},
 };
 </script>
 
 <style scoped>
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
-.grid-item {
-  height: 100px;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+.collapse {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.collapse-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.collapse-item__title {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #000;
+  background: #efefef;
+}
+.collapse-item__body {
+  flex: 1;
+  max-height: 100px;
+  overflow-y: auto;
 }
 </style>

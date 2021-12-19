@@ -10,7 +10,7 @@
     "commit-log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
-    "ant-design-vue": "^2.2.2",
+    "ant-design-vue": "^3.0.0-alpha.14",
     "axios": "^0.21.4",
     "babel-plugin-import": "^1.13.3",
     "core-js": "^3.6.5",
