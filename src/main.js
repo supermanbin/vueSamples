@@ -2,7 +2,20 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./routers";
 import store from "./store";
-import { Button, Layout, Menu, List, Tabs, Drawer } from "ant-design-vue";
+import {
+  Button,
+  Layout,
+  Menu,
+  List,
+  Tabs,
+  Drawer,
+  Input,
+  Tag,
+  Space,
+  Row,
+  Col,
+  Form,
+} from "ant-design-vue";
 
 import "@/assets/styles/index.less";
 
@@ -15,6 +28,12 @@ app
   .use(Menu)
   .use(List)
   .use(Drawer)
+  .use(Input)
+  .use(Tag)
+  .use(Space)
+  .use(Row)
+  .use(Col)
+  .use(Form)
   .use(Tabs);
 
 app.mount("#app");
