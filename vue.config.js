@@ -4,6 +4,9 @@ module.exports = {
   devServer: {
     port: 1024,
   },
+  configureWebpack: {
+    devtool: "source-map",
+  },
   pluginOptions: {
     "style-resources-loader": {
       preProcessor: "less",
