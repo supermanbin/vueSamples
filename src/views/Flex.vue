@@ -34,7 +34,7 @@
     <a-form-item
       v-for="(team, index) in teams"
       :key="index"
-      :label="`⚽️⚽️⚽️⚽️队${index + 1}`"
+      :label="`⚽️⚽️⚽️⚽️队__${index + 1}`"
     >
       <a-tag
         v-for="(tag, tagInx) in team"

@@ -1,8 +1,9 @@
-# 0.1.0 (2022-01-01)
+# 0.1.0 (2022-01-06)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ all | 足球队分队 | [87ee3f7](https://github.com/supermanbin/vueSamples/commit/87ee3f7)
  all | 足球队分队 | [ec40b0c](https://github.com/supermanbin/vueSamples/commit/ec40b0c)
  All | add git commit standard | [986a9f2](https://github.com/supermanbin/vueSamples/commit/986a9f2)
  all | emit | [186da1e](https://github.com/supermanbin/vueSamples/commit/186da1e)
