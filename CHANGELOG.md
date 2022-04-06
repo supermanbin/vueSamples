@@ -1,4 +1,4 @@
-# 0.1.0 (2021-09-30)
+# 0.1.0 (2022-04-06)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -8,6 +8,7 @@
  counter tab | vue provide, inject & vuex count 使用方式 | [d66facc](https://github.com/supermanbin/vueSamples/commit/d66facc)
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
+ rebuild yarn | yarn | [7d00053](https://github.com/supermanbin/vueSamples/commit/7d00053)
  revert 02 | revert 02 | [fec9904](https://github.com/supermanbin/vueSamples/commit/fec9904)
  revert 03 | revert 03 | [9315e2f](https://github.com/supermanbin/vueSamples/commit/9315e2f)
  revert | test git revert | [7c62b6b](https://github.com/supermanbin/vueSamples/commit/7c62b6b)

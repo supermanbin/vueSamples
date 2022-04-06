@@ -28,6 +28,13 @@ const routes = [
       import(/* webpackChunkName: "spacex" */ "../views/SpaceX.vue"),
     children: [],
   },
+  {
+    path: "/datePicker",
+    name: "DatePicker",
+    component: () =>
+      import(/* webpackChunkName: "spacex" */ "../views/datePicker"),
+    children: [],
+  },
 ];
 
 const router = createRouter({
