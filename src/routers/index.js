@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Grid from "../views/Grid.vue";
 import Counter from "../views/counter/Counter.vue";
 import CounterOfPureVue from "../views/counter/CounterOfPureVue.vue";
@@ -50,7 +50,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
@@ -58,6 +58,7 @@ const router = createRouter({
  * 路由
  */
 router.beforeEach((guard) => {
+  console.log(guard);
   if (guard.path.split("/").length) {
     // 刷新页面重置菜单选中状态
     store.commit("changeMenuSelectKeys", ["/" + guard.path.split("/")[1]]);
