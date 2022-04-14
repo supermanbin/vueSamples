@@ -1,8 +1,9 @@
-# 0.1.0 (2022-04-11)
+# 0.1.0 (2022-04-14)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ 所有 | counter of vuex | [6b8e811](https://github.com/supermanbin/vueSamples/commit/6b8e811)
  all | 足球队分队 | [ec40b0c](https://github.com/supermanbin/vueSamples/commit/ec40b0c)
  All | add git commit standard | [986a9f2](https://github.com/supermanbin/vueSamples/commit/986a9f2)
  all | emit | [186da1e](https://github.com/supermanbin/vueSamples/commit/186da1e)

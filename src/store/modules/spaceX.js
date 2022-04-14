@@ -1,4 +1,4 @@
-import { getLanches } from "@/services/index";
+import { getAllCoffees } from "@/services/coffeeServices";
 
 const state = {
   lanches: [],
@@ -16,7 +16,7 @@ const mutations = {
 
 const actions = {
   async getAllLanches({ commit }) {
-    const lanches = await getLanches();
+    const lanches = await getAllCoffees();
     commit("setLanches", lanches.data);
     commit("setLoading", false);
   },
