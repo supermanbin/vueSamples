@@ -21,7 +21,6 @@ export default {
   setup() {
     // tab default key
     const activeKey = ref("PROVIDE_COUNT");
-
     const tabChangehandle = (activeKey) => {
       console.log(activeKey);
       switch (activeKey) {
