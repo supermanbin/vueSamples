@@ -1,5 +1,6 @@
 <template>
   <DatePicker v-model="range" mode="date" isRange :columns="2" :step="1" />
+  <EmitInput />
   <ul>
     <li v-for="item in lists" :key="item.number">{{ item.number }}</li>
   </ul>
@@ -7,8 +8,12 @@
 
 <script>
 import { ref, onMounted } from "vue";
+import EmitInput from "@/components/EmitInput.vue";
 
 export default {
+  components: {
+    EmitInput,
+  },
   setup() {
     let range = ref({
       start: new Date(2022, 2, 20),

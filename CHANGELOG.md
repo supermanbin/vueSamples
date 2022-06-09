@@ -1,4 +1,4 @@
-# 0.1.0 (2022-04-06)
+# 0.1.0 (2022-06-09)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -6,6 +6,7 @@
  All | add git commit standard | [986a9f2](https://github.com/supermanbin/vueSamples/commit/986a9f2)
  all | provide & inject使用 | [81f4ae9](https://github.com/supermanbin/vueSamples/commit/81f4ae9)
  counter tab | vue provide, inject & vuex count 使用方式 | [d66facc](https://github.com/supermanbin/vueSamples/commit/d66facc)
+ Date Picker | add new conponent v-calendar | [7930c41](https://github.com/supermanbin/vueSamples/commit/7930c41)
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
  rebuild yarn | yarn | [7d00053](https://github.com/supermanbin/vueSamples/commit/7d00053)
