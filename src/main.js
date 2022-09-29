@@ -2,12 +2,20 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./routers";
 import store from "./store";
-
 import { Button, Layout, Menu, List, Tabs } from "ant-design-vue";
 import { SetupCalendar, Calendar, DatePicker } from "v-calendar";
-
 import "v-calendar/dist/style.css";
 import "@/assets/styles/index.less";
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { fas } from "@fortawesome/free-solid-svg-icons";
+// import { far } from "@fortawesome/free-regular-svg-icons";
+
+/* 注册font */
+library.add(fas);
 
 const app = createApp(App);
 app
@@ -22,4 +30,5 @@ app
 // Use the components
 app.component("Calendar", Calendar);
 app.component("DatePicker", DatePicker);
+app.component('font-awesome-icon', FontAwesomeIcon)
 app.mount("#app");

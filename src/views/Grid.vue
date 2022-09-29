@@ -1,10 +1,18 @@
 <template>
   <div class="grid-wrapper">
     <div class="grid-container">
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
-      <div class="grid-item"></div>
+      <div class="grid-item">
+        <span><font-awesome-icon icon="fas fa-align-left" /></span>
+      </div>
+      <div class="grid-item">
+        <span><font-awesome-icon icon="fas fa-align-right" /></span>
+      </div>
+      <div class="grid-item">
+        <span><font-awesome-icon icon="fas fa-align-justify" /></span>
+      </div>
+      <div class="grid-item">
+        <span><font-awesome-icon icon="fas fa-align-center" /></span>
+      </div>
     </div>
   </div>
 </template>
@@ -17,10 +25,7 @@ export default {
   name: "Grid",
   components: {},
   created() {},
-  mounted() {
-    console.log(`table tr:`, this.$refs.table.rows);
-    console.log(`table th:`, this.$refs.table.rows[0].cells);
-  },
+  mounted() {},
 };
 </script>
 
@@ -40,6 +45,15 @@ export default {
   grid-template-rows: 32px;
 }
 .grid-item {
+  display: flex;
   grid-column-end: span 4;
+  align-items: center;
+  justify-content: center;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.grid-item:hover {
+  background: aliceblue;
 }
 </style>
