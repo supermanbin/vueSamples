@@ -1,18 +1,12 @@
 <template>
-  <table ref="table">
-    <tr>
-      <th>header 1</th>
-      <th>header 2</th>
-      <th>header 3</th>
-      <th>header 4</th>
-    </tr>
-    <tr>
-      <td>td 1</td>
-      <td>td 2</td>
-      <td>td 3</td>
-      <td>td 4</td>
-    </tr>
-  </table>
+  <div class="grid-wrapper">
+    <div class="grid-container">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -29,3 +23,23 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.grid-wrapper {
+  position: absolute;
+  right: 0;
+  top: 64px;
+  width: 260px;
+  height: calc(100vh - 64px);
+  background: #fff;
+}
+.grid-container {
+  padding: 0 8px;
+  display: grid;
+  grid-template-columns: repeat(28, 8px);
+  grid-template-rows: 32px;
+}
+.grid-item {
+  grid-column-end: span 4;
+}
+</style>

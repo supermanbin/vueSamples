@@ -1176,7 +1176,7 @@
 
 "@popperjs/core@2.4.0":
   version "2.4.0"
-  resolved "https://registry.npmmirror.com/@popperjs/core/-/core-2.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.0.tgz#0e1bdf8d021e7ea58affade33d9d607e11365915"
   integrity sha512-NMrDy6EWh9TPdSRiHmHH2ye1v5U0gBD7pRYwSwJvomx7Bm4GG04vu63dYiVzebLOx2obPpJugew06xVP0Nk7hA==
 
 "@simonwep/pickr@~1.8.0":
@@ -3105,10 +3105,10 @@ canvas-sketch-cli@^1.11.15:
     terser "^3.7.6"
     through2 "^2.0.3"
 
-canvas-sketch@^0.7.5:
-  version "0.7.5"
-  resolved "https://registry.npmmirror.com/canvas-sketch/-/canvas-sketch-0.7.5.tgz#53111f3a93343e44f5bfb46c065ad155efbb8a04"
-  integrity sha512-3E7oZ250O+feVHzMXD1vd2PGAzvjE6iskQE/pP5vZ4g5Np/79751L2aMUcn70I8eDsa8wkUoTuj2NXWAfypwig==
+canvas-sketch@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/canvas-sketch/-/canvas-sketch-0.7.6.tgz#a209045556c5f9dd03501a54e6e40f61621b78f7"
+  integrity sha512-BBMvt9qmQtfjDF/oc5dXPddWpYG4OSEq85PgblZKhaJ885DIErbpW+sALyxMdf6NqRsLMnbGeue0KnD8pfzHZA==
   dependencies:
     convert-length "^1.0.1"
     dateformat "^3.0.3"
@@ -4206,14 +4206,14 @@ dashdash@^1.12.0:
     assert-plus "^1.0.0"
 
 date-fns-tz@^1.0.12:
-  version "1.3.1"
-  resolved "https://registry.npmmirror.com/date-fns-tz/-/date-fns-tz-1.3.1.tgz"
-  integrity sha512-Uy+wph6HcQ0IG8TWbVyXicgDmB1zdvb0CoIknZQaxiTun4uSfxLR+8gSTC2C3KCLq+0fEIuEtJ/ORDRIn6doQw==
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/date-fns-tz/-/date-fns-tz-1.3.7.tgz#e8e9d2aaceba5f1cc0e677631563081fdcb0e69a"
+  integrity sha512-1t1b8zyJo+UI8aR+g3iqr5fkUHWpd58VBx8J/ZSQ+w7YrGlw80Ag4sA86qkfCXRBLmMc4I2US+aPMd4uKvwj5g==
 
 date-fns@^2.16.1:
-  version "2.28.0"
-  resolved "https://registry.npmmirror.com/date-fns/-/date-fns-2.28.0.tgz"
-  integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 dateformat@^3.0.0, dateformat@^3.0.3:
   version "3.0.3"
@@ -11415,7 +11415,7 @@ uuid@^3.3.2, uuid@^3.4.0:
 
 v-calendar@^3.0.0-alpha.8:
   version "3.0.0-alpha.8"
-  resolved "https://registry.npmmirror.com/v-calendar/-/v-calendar-3.0.0-alpha.8.tgz"
+  resolved "https://registry.yarnpkg.com/v-calendar/-/v-calendar-3.0.0-alpha.8.tgz#3bc8c69f4788fb527c39706f41fd2a502a17c827"
   integrity sha512-T23H5UbK0EomrwArlF/jrT2LFbV/lu+Bp9JroZ1paN6rPoaMyvE+HrLxvAmUgi+pODrdTURDMzM3+WPgeFKEBQ==
   dependencies:
     "@popperjs/core" "2.4.0"
