@@ -1,8 +1,9 @@
-# 0.1.0 (2022-09-29)
+# 0.1.0 (2022-09-30)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ - | add fontawesome | [f85d475](https://github.com/supermanbin/vueSamples/commit/f85d475)
  All | add git commit standard | [986a9f2](https://github.com/supermanbin/vueSamples/commit/986a9f2)
  all | provide & inject使用 | [81f4ae9](https://github.com/supermanbin/vueSamples/commit/81f4ae9)
  canvas | canvas sketch | [8c198a7](https://github.com/supermanbin/vueSamples/commit/8c198a7)
