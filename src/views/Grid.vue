@@ -133,6 +133,7 @@
           class="grid-item grid-item--nobg grid-item--start16 grid-item--end6"
         >
           <label class="position">
+            <span class="position__unit position__unit--nowidth"></span>
             <input class="position__number" type="text" v-model="position.x" />
           </label>
         </div>
@@ -289,6 +290,10 @@ each(range(27), {
   color: var(--unit-color);
   font-size: var(--font-size-11);
   cursor: ew-resize;
+
+  &--nowidth {
+    flex: 0 0 0;
+  }
 }
 .position__number {
   width: 100%;
