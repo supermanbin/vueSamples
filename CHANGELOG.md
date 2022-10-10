@@ -14,6 +14,7 @@
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  - | grid | [3e983ad](https://github.com/supermanbin/vueSamples/commit/3e983ad)
  - | grid | [39da0e1](https://github.com/supermanbin/vueSamples/commit/39da0e1)
+ grid | color picker | [b55dfd4](https://github.com/supermanbin/vueSamples/commit/b55dfd4)
  grid | grid | [a7af446](https://github.com/supermanbin/vueSamples/commit/a7af446)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
  rebuild yarn | yarn | [7d00053](https://github.com/supermanbin/vueSamples/commit/7d00053)
