@@ -116,7 +116,10 @@
     <!-- Layer -->
     <div class="grid-wrapper grid-wrapper--hasbord">
       <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-title" style="width: 100%">
+        <div
+          class="grid-item grid-item--nobg grid-title grid-item--end8"
+          style="width: 100%"
+        >
           <strong>Layer</strong>
         </div>
       </div>
@@ -154,21 +157,37 @@
     <!-- Fill -->
     <div class="grid-wrapper grid-wrapper--hasbord">
       <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-title" style="width: 100%">
+        <div
+          class="grid-item grid-item--nobg grid-title grid-item--end8"
+          style="width: 100%"
+        >
           <strong>Fill</strong>
+        </div>
+        <div class="grid-item grid-item--start20">
+          <span>
+            <font-awesome-icon icon="fas fa-grip" class="icon" />
+          </span>
+        </div>
+        <div class="grid-item grid-item--start25">
+          <span>
+            <font-awesome-icon icon="fas fa-plus" class="icon" />
+          </span>
         </div>
       </div>
       <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-item--end18">
+        <div class="grid-item grid-item--nobg grid-item--end14">
           <label class="position">
             <span class="position__unit">
-              <input class="color-picker" type="color" />
+              <input type="color" />
             </span>
-            <input
-              class="position__number position__number--tac"
-              type="text"
-              v-model="position.x"
-            />
+            <input class="position__number" type="text" v-model="position.x" />
+          </label>
+        </div>
+        <div
+          class="grid-item grid-item--nobg grid-item--start16 grid-item--end6"
+        >
+          <label class="position">
+            <span class="position__unit position__unit--nowidth"></span>
             <input
               class="position__number position__number--tac"
               type="text"
@@ -176,7 +195,6 @@
             />
           </label>
         </div>
-
         <div class="grid-item grid-item--start25" @click="openAndCloseEye">
           <span>
             <font-awesome-icon
@@ -291,13 +309,23 @@ each(range(27), {
   }
 });
 
+//.grid-item--start12 {
+//  grid-column-start: 13;
+//  grid-column-end: span 11;
+//  width: 100%;
+//}
+//.grid-item--start15 {
+//  grid-column-start: 16;
+//}
+//.grid-item--end19 {
+//  grid-column-end: span 6;
+//}
 .grid-item--end {
   grid-column-start: 25;
   grid-column-end: span 4;
 }
 .grid-title {
   grid-column-start: 2;
-  grid-column-end: span 26;
   justify-content: flex-start;
 }
 .position {
@@ -332,29 +360,8 @@ each(range(27), {
   height: 24px;
   line-height: 24px;
   font-size: 14px;
-  &:focus {
-    outline: none;
-  }
-
-  &--tac {
-    text-align: center;
-  }
 }
-
-.color-picker {
-  border: none;
-  appearance: none;
-  width: 32px;
-  padding: 0;
-  background: none;
-
-  &::-webkit-color-swatch-wrapper {
-    padding: 0;
-  }
-
-  &::-webkit-color-swatch {
-    border: 0;
-    border-radius: 0;
-  }
+.position__number:focus {
+  outline: none;
 }
 </style>
