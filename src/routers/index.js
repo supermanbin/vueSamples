@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Grid from "../views/Grid.vue";
+import Figma from "../views/Figma.vue";
 import store from "../store";
 
 const routes = [
@@ -8,9 +8,9 @@ const routes = [
     redirect: "/grid",
   },
   {
-    path: "/grid",
-    name: "Grid",
-    component: Grid,
+    path: "/figma",
+    name: "Figma",
+    component: Figma,
   },
   {
     path: "/counter",

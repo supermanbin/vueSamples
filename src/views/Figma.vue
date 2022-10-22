@@ -1,29 +1,12 @@
 <template>
   <div class="right-panel">
-    <div class="grid-wrapper grid-wrapper--hasbord">
-      <div class="grid-container">
-        <div class="grid-item">
-          <span>
-            <font-awesome-icon icon="fas fa-align-left" class="icon" />
-          </span>
-        </div>
-        <div class="grid-item">
-          <span>
-            <font-awesome-icon icon="fas fa-align-right" class="icon" />
-          </span>
-        </div>
-        <div class="grid-item">
-          <span>
-            <font-awesome-icon icon="fas fa-align-justify" class="icon" />
-          </span>
-        </div>
-        <div class="grid-item">
-          <span>
-            <font-awesome-icon icon="fas fa-align-center" class="icon" />
-          </span>
-        </div>
-      </div>
-    </div>
+    <grid :has-bottom-border="true">
+      <grid-item icon="fas fa-align-left">aaa</grid-item>
+      <grid-item icon="fas fa-align-right">aaa</grid-item>
+      <grid-item icon="fas fa-align-justify">aaa</grid-item>
+      <grid-item icon="fas fa-align-center">aaa</grid-item>
+    </grid>
+
     <div class="grid-wrapper grid-wrapper--hasbord">
       <div class="grid-container">
         <div class="grid-item grid-item--nobg grid-item--end11">
@@ -210,11 +193,15 @@
 
 <script>
 // @ is an alias to /src
-import { ref } from "vue";
+import { ref, version } from "vue";
+import Grid from "@/components/Grid";
+import GridItem from "@/components/GridItem";
 
 export default {
-  name: "Grid",
+  name: "Figma",
+  components: { Grid, GridItem },
   setup() {
+    console.log(version);
     const position = ref({
       width: 0,
       height: 0,
@@ -308,18 +295,6 @@ each(range(27), {
     grid-column-end: span (@index);
   }
 });
-
-//.grid-item--start12 {
-//  grid-column-start: 13;
-//  grid-column-end: span 11;
-//  width: 100%;
-//}
-//.grid-item--start15 {
-//  grid-column-start: 16;
-//}
-//.grid-item--end19 {
-//  grid-column-end: span 6;
-//}
 .grid-item--end {
   grid-column-start: 25;
   grid-column-end: span 4;

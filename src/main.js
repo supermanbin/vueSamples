@@ -2,7 +2,16 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./routers";
 import store from "./store";
-import { Button, Layout, Menu, List, Tabs, Select } from "ant-design-vue";
+import {
+  Button,
+  Layout,
+  Menu,
+  List,
+  Tabs,
+  Select,
+  Row,
+  Col,
+} from "ant-design-vue";
 import { SetupCalendar, Calendar, DatePicker } from "v-calendar";
 import "v-calendar/dist/style.css";
 import "@/assets/styles/index.less";
@@ -27,6 +36,8 @@ app
   .use(List)
   .use(Tabs)
   .use(Select)
+  .use(Row)
+  .use(Col)
   .use(SetupCalendar, {});
 // Use the components
 app.component("Calendar", Calendar);
