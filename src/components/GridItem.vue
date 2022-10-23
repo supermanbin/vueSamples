@@ -1,5 +1,7 @@
 <script>
 import { defineComponent } from "vue";
+import classNames from "@/tools/classNames";
+
 const GridItem = defineComponent({
   name: "GridItem",
   props: {
@@ -15,8 +17,9 @@ const GridItem = defineComponent({
     },
   },
   setup(props) {
+    const itemCls = classNames("grid-item");
     return () => (
-      <div className="grid-item">
+      <div className={itemCls}>
         <span>
           <font-awesome-icon icon={props.icon} class="icon" />
         </span>
