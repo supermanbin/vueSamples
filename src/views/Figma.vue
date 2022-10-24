@@ -1,101 +1,46 @@
 <template>
   <div class="right-panel">
     <grid :has-bottom-border="true">
-      <grid-item icon="fas fa-align-left">aaa</grid-item>
-      <grid-item icon="fas fa-align-right">aaa</grid-item>
-      <grid-item icon="fas fa-align-justify">aaa</grid-item>
-      <grid-item icon="fas fa-align-center">aaa</grid-item>
+      <grid-item>
+        <font-awesome-icon icon="fas fa-align-left" class="icon icon--10" />
+      </grid-item>
+      <grid-item>
+        <font-awesome-icon icon="fas fa-align-right" class="icon icon--10" />
+      </grid-item>
+      <grid-item>
+        <font-awesome-icon icon="fas fa-align-justify" class="icon icon--10" />
+      </grid-item>
+      <grid-item>
+        <font-awesome-icon icon="fas fa-align-center" class="icon icon--10" />
+      </grid-item>
     </grid>
-
-    <div class="grid-wrapper grid-wrapper--hasbord">
-      <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-item--end11">
-          <label class="position">
-            <span class="position__unit">
-              <font-awesome-icon icon="fas fa-x" class="icon icon--10" />
-            </span>
-            <input class="position__number" type="text" v-model="position.x" />
-          </label>
-        </div>
-        <div
-          class="grid-item grid-item--nobg grid-item--start13 grid-item--end11"
-        >
-          <label class="position">
-            <span class="position__unit">
-              <font-awesome-icon icon="fas fa-y" class="icon icon--10" />
-            </span>
-            <input class="position__number" type="text" v-model="position.y" />
-          </label>
-        </div>
-      </div>
-      <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-item--end11">
-          <label class="position">
-            <span class="position__unit">
-              <font-awesome-icon icon="fas fa-w" class="icon icon--10" />
-            </span>
-            <input
-              class="position__number"
-              type="text"
-              v-model="position.width"
-            />
-          </label>
-        </div>
-        <div
-          class="grid-item grid-item--nobg grid-item--start13 grid-item--end11"
-        >
-          <label class="position">
-            <span class="position__unit">
-              <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
-            </span>
-            <input
-              class="position__number"
-              type="text"
-              v-model="position.height"
-            />
-          </label>
-        </div>
-        <div class="grid-item grid-item--start25" @click="linkAndUnlink">
-          <span>
-            <font-awesome-icon
-              :icon="isLink ? 'fas fa-link' : 'fas fa-link-slash'"
-              class="icon"
-            />
-          </span>
-        </div>
-      </div>
-      <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-item--end11">
-          <label class="position">
-            <span class="position__unit">
-              <font-awesome-icon icon="fas fa-r" class="icon icon--10" />
-            </span>
-            <input
-              class="position__number"
-              type="text"
-              v-model="position.rotation"
-            />
-          </label>
-        </div>
-        <div
-          class="grid-item grid-item--nobg grid-item--start13 grid-item--end11"
-        >
-          <label class="position">
-            <span class="position__unit">
-              <font-awesome-icon icon="fas fa-c" class="icon icon--10" />
-            </span>
-            <input
-              class="position__number"
-              type="text"
-              v-model="position.corner"
-            />
-          </label>
-        </div>
-        <div class="grid-item grid-item--start25">
-          <span><font-awesome-icon icon="fas fa-expand" class="icon" /></span>
-        </div>
-      </div>
-    </div>
+    <grid>
+      <grid-item :grid-end="11" :has-background="false">
+        <grid-input>
+          <font-awesome-icon icon="fas fa-x" class="icon icon--10" />
+        </grid-input>
+      </grid-item>
+      <grid-item :grid-start="13" :grid-end="11" :has-background="false">
+        <grid-input>
+          <font-awesome-icon icon="fas fa-y" class="icon icon--10" />
+        </grid-input>
+      </grid-item>
+    </grid>
+    <grid>
+      <grid-item :grid-end="11" :has-background="false">
+        <grid-input>
+          <font-awesome-icon icon="fas fa-w" class="icon icon--10" />
+        </grid-input>
+      </grid-item>
+      <grid-item :grid-start="13" :grid-end="11" :has-background="false">
+        <grid-input>
+          <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
+        </grid-input>
+      </grid-item>
+      <grid-item :grid-start="25">
+        <font-awesome-icon icon="fas fa-link" class="icon icon--10" />
+      </grid-item>
+    </grid>
     <!-- Layer -->
     <div class="grid-wrapper grid-wrapper--hasbord">
       <div class="grid-container">
@@ -196,10 +141,11 @@
 import { ref, version } from "vue";
 import Grid from "@/components/Grid";
 import GridItem from "@/components/GridItem";
+import GridInput from "@/components/GridInput";
 
 export default {
   name: "Figma",
-  components: { Grid, GridItem },
+  components: { Grid, GridItem, GridInput },
   setup() {
     console.log(version);
     const position = ref({
@@ -232,13 +178,6 @@ export default {
 </script>
 
 <style scoped lang="less">
-:global(:root) {
-  --primary-color: #4091f7;
-  --unit-color: #a6abc9;
-  --font-size-11: 11px;
-  --bord-color: #f2f2f2;
-}
-
 .icon {
   color: var(--unit-color);
   font-size: 12px;
@@ -255,46 +194,7 @@ export default {
   height: calc(100vh - 64px);
   background: #fff;
 }
-.grid-wrapper {
-  padding: 8px 0;
-}
-.grid-wrapper--hasbord {
-  border-bottom: 1px solid #ededed;
-}
-.grid-container {
-  padding: 2px 8px;
-  display: grid;
-  grid-template-columns: repeat(28, 8px);
-  grid-template-rows: 32px;
-}
-.grid-item {
-  display: flex;
-  grid-column-end: span 4;
-  align-items: center;
-  justify-content: center;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 
-  //  hover
-  &:hover {
-    background: aliceblue;
-  }
-  &--nobg:hover {
-    background: transparent;
-  }
-}
-// Less each function https://lesscss.org/functions/#list-functions-each
-each(range(27), {
-  .grid-item--start@{index} {
-    grid-column-start: (@index);
-  }
-});
-each(range(27), {
-  .grid-item--end@{index} {
-    grid-column-end: span (@index);
-  }
-});
 .grid-item--end {
   grid-column-start: 25;
   grid-column-end: span 4;

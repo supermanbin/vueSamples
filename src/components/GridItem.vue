@@ -5,25 +5,28 @@ import classNames from "@/tools/classNames";
 const GridItem = defineComponent({
   name: "GridItem",
   props: {
-    icon: {
-      type: String,
-      default: "",
-    },
     gridStart: {
       type: Number,
     },
     gridEnd: {
       type: Number,
     },
+    hasBackground: {
+      type: Boolean,
+      default: true,
+    },
   },
-  setup(props) {
-    const itemCls = classNames("grid-item");
+  setup(props, { slots }) {
+    const itemCls = classNames(
+      "grid-item",
+      `grid-item--start${props.gridStart}`,
+      `grid-item--end${props.gridEnd}`,
+      {
+        "grid-item--nobg": !props.hasBackground,
+      }
+    );
     return () => (
-      <div className={itemCls}>
-        <span>
-          <font-awesome-icon icon={props.icon} class="icon" />
-        </span>
-      </div>
+      <div className={itemCls}>{slots.default && slots.default()}</div>
     );
   },
 });
@@ -31,13 +34,6 @@ export default GridItem;
 </script>
 
 <style lang="less" scoped>
-.icon {
-  color: var(--unit-color);
-  font-size: 12px;
-  &--10 {
-    font-size: 10px;
-  }
-}
 .grid-item {
   display: flex;
   grid-column-end: span 4;

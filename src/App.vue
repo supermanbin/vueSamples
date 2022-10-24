@@ -55,7 +55,15 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style scoped lang="less">
+:global(:root) {
+  --primary-color: #4091f7;
+  --unit-color: #a6abc9;
+  --font-size-11: 11px;
+  --bord-color: #f2f2f2;
+  --unit-size: 8px;
+}
+
 .layout-header {
   display: flex;
   justify-content: space-between;

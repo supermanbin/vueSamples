@@ -31,17 +31,16 @@ const Grid = defineComponent({
 export default Grid;
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .grid-wrapper {
-  padding: 8px 0;
-}
-.grid-wrapper--hasbord {
-  border-bottom: 1px solid #ededed;
+  &--hasbord {
+    border-bottom: 1px solid #ededed;
+  }
 }
 .grid-container {
-  padding: 2px 8px;
+  padding: 2px var(--unit-size);
   display: grid;
-  grid-template-columns: repeat(28, 8px);
+  grid-template-columns: repeat(28, var(--unit-size));
   grid-template-rows: 32px;
 }
 </style>
