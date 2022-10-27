@@ -38,15 +38,20 @@ export default GridInput;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32px;
-    height: 32px;
+    flex: 0 0 32px;
+    height: 28px;
   }
   &--input {
     border: 0;
     width: 100%;
+    padding: 0;
 
     &:focus {
       outline: none;
+    }
+
+    &[type="number"]::-webkit-inner-spin-button {
+      appearance: none;
     }
   }
 }

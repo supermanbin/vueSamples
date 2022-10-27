@@ -16,29 +16,32 @@
     </grid>
     <grid>
       <grid-item :grid-end="11" :has-background="false">
-        <grid-input>
+        <grid-input type="number">
           <font-awesome-icon icon="fas fa-x" class="icon icon--10" />
         </grid-input>
       </grid-item>
       <grid-item :grid-start="13" :grid-end="11" :has-background="false">
-        <grid-input>
+        <grid-input type="number">
           <font-awesome-icon icon="fas fa-y" class="icon icon--10" />
         </grid-input>
       </grid-item>
     </grid>
     <grid>
       <grid-item :grid-end="11" :has-background="false">
-        <grid-input>
+        <grid-input type="number">
           <font-awesome-icon icon="fas fa-w" class="icon icon--10" />
         </grid-input>
       </grid-item>
       <grid-item :grid-start="13" :grid-end="11" :has-background="false">
-        <grid-input>
+        <grid-input type="number">
           <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
         </grid-input>
       </grid-item>
-      <grid-item :grid-start="25">
-        <font-awesome-icon icon="fas fa-link" class="icon icon--10" />
+      <grid-item :grid-start="25" @click="linkAndUnlink">
+        <font-awesome-icon
+          :icon="isLink ? 'fas fa-link' : 'fas fa-link-slash'"
+          class="icon icon--10"
+        />
       </grid-item>
     </grid>
     <!-- Layer -->
@@ -158,7 +161,7 @@ export default {
     });
 
     const isOpenEye = ref(true);
-    const isLink = ref(true);
+    const isLink = ref(false);
 
     return {
       position,

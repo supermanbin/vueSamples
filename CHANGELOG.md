@@ -1,4 +1,4 @@
-# 0.1.0 (2022-10-24)
+# 0.1.0 (2022-10-27)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -20,6 +20,7 @@
  grid | color picker | [6bd0019](https://github.com/supermanbin/vueSamples/commit/6bd0019)
  grid | color picker | [b55dfd4](https://github.com/supermanbin/vueSamples/commit/b55dfd4)
  grid | grid | [a7af446](https://github.com/supermanbin/vueSamples/commit/a7af446)
+ - | gridInput | [5a99c09](https://github.com/supermanbin/vueSamples/commit/5a99c09)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
  rebuild yarn | yarn | [7d00053](https://github.com/supermanbin/vueSamples/commit/7d00053)
  revert 02 | revert 02 | [fec9904](https://github.com/supermanbin/vueSamples/commit/fec9904)
