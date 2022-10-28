@@ -11,16 +11,27 @@ const GridInput = defineComponent({
         return ["text", "number"].includes(type);
       },
     },
+    modelVal: { type: String },
   },
+  slots: ["prefix"],
+  emits: ["update:value", "on-change"],
   setup(props, ctx) {
     console.log(props, ctx);
+    const valueChange = () => {};
+
     return () => (
       <div className="grid-input">
         <label className="grid-input-wrapper">
           <span className="grid-input--label">
-            {ctx.slots.default && ctx.slots.default()}
+            {ctx.slots.prefix && ctx.slots.prefix()}
           </span>
-          <input className="grid-input--input" type={props.type} />
+          {ctx.slots.default && ctx.slots.default()}
+          <input
+            value={props.modelVal}
+            className="grid-input--input"
+            type={props.type}
+            onChange={valueChange}
+          />
         </label>
       </div>
     );

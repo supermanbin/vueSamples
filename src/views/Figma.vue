@@ -16,8 +16,11 @@
     </grid>
     <grid>
       <grid-item :grid-end="11" :has-background="false">
-        <grid-input type="number">
+        <grid-input v-model="position.x" type="number" @on-change="update">
           <font-awesome-icon icon="fas fa-x" class="icon icon--10" />
+          <template #prefix>
+            <strong>dfsdf</strong>
+          </template>
         </grid-input>
       </grid-item>
       <grid-item :grid-start="13" :grid-end="11" :has-background="false">
@@ -141,7 +144,7 @@
 
 <script>
 // @ is an alias to /src
-import { ref, version } from "vue";
+import { ref } from "vue";
 import Grid from "@/components/Grid";
 import GridItem from "@/components/GridItem";
 import GridInput from "@/components/GridInput";
@@ -150,7 +153,6 @@ export default {
   name: "Figma",
   components: { Grid, GridItem, GridInput },
   setup() {
-    console.log(version);
     const position = ref({
       width: 0,
       height: 0,
@@ -163,10 +165,16 @@ export default {
     const isOpenEye = ref(true);
     const isLink = ref(false);
 
+    const update = (val) => {
+      position.value.x = val;
+      console.log(val);
+    };
+
     return {
       position,
       isOpenEye,
       isLink,
+      update,
     };
   },
   methods: {
