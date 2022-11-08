@@ -16,10 +16,10 @@
     </grid>
     <grid>
       <grid-item :grid-end="11" :has-background="false">
-        <grid-input v-model="position.x" type="number" @on-change="update">
+        <grid-input v-model:value="position.x" type="number">
           <font-awesome-icon icon="fas fa-x" class="icon icon--10" />
           <template #prefix>
-            <strong>dfsdf</strong>
+            <strong>prefix</strong>
           </template>
         </grid-input>
       </grid-item>
@@ -36,7 +36,12 @@
         </grid-input>
       </grid-item>
       <grid-item :grid-start="13" :grid-end="11" :has-background="false">
-        <grid-input type="number">
+        <grid-input
+          type="number"
+          v-model:value="position.x"
+          @onChange="changeHandle"
+          @pressEnter="handlePressEnter"
+        >
           <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
         </grid-input>
       </grid-item>
@@ -47,98 +52,6 @@
         />
       </grid-item>
     </grid>
-    <!-- Layer -->
-    <div class="grid-wrapper grid-wrapper--hasbord">
-      <div class="grid-container">
-        <div
-          class="grid-item grid-item--nobg grid-title grid-item--end8"
-          style="width: 100%"
-        >
-          <strong>Layer</strong>
-        </div>
-      </div>
-      <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-item--end14">
-          <label class="position">
-            <span class="position__unit">
-              <font-awesome-icon icon="fas fa-droplet" class="icon icon--10" />
-            </span>
-            <input class="position__number" type="text" v-model="position.x" />
-          </label>
-        </div>
-        <div
-          class="grid-item grid-item--nobg grid-item--start16 grid-item--end6"
-        >
-          <label class="position">
-            <span class="position__unit position__unit--nowidth"></span>
-            <input
-              class="position__number position__number--tac"
-              type="text"
-              v-model="position.x"
-            />
-          </label>
-        </div>
-        <div class="grid-item grid-item--start25" @click="openAndCloseEye">
-          <span>
-            <font-awesome-icon
-              :icon="isOpenEye ? 'fas fa-eye' : 'fas fa-eye-slash'"
-              class="icon"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
-    <!-- Fill -->
-    <div class="grid-wrapper grid-wrapper--hasbord">
-      <div class="grid-container">
-        <div
-          class="grid-item grid-item--nobg grid-title grid-item--end8"
-          style="width: 100%"
-        >
-          <strong>Fill</strong>
-        </div>
-        <div class="grid-item grid-item--start20">
-          <span>
-            <font-awesome-icon icon="fas fa-grip" class="icon" />
-          </span>
-        </div>
-        <div class="grid-item grid-item--start25">
-          <span>
-            <font-awesome-icon icon="fas fa-plus" class="icon" />
-          </span>
-        </div>
-      </div>
-      <div class="grid-container">
-        <div class="grid-item grid-item--nobg grid-item--end14">
-          <label class="position">
-            <span class="position__unit">
-              <input type="color" />
-            </span>
-            <input class="position__number" type="text" v-model="position.x" />
-          </label>
-        </div>
-        <div
-          class="grid-item grid-item--nobg grid-item--start16 grid-item--end6"
-        >
-          <label class="position">
-            <span class="position__unit position__unit--nowidth"></span>
-            <input
-              class="position__number position__number--tac"
-              type="text"
-              v-model="position.x"
-            />
-          </label>
-        </div>
-        <div class="grid-item grid-item--start25" @click="openAndCloseEye">
-          <span>
-            <font-awesome-icon
-              :icon="isOpenEye ? 'fas fa-eye' : 'fas fa-eye-slash'"
-              class="icon"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -156,7 +69,7 @@ export default {
     const position = ref({
       width: 0,
       height: 0,
-      x: 0,
+      x: "0",
       y: 0,
       rotation: "0º",
       corner: 0,
@@ -165,16 +78,10 @@ export default {
     const isOpenEye = ref(true);
     const isLink = ref(false);
 
-    const update = (val) => {
-      position.value.x = val;
-      console.log(val);
-    };
-
     return {
       position,
       isOpenEye,
       isLink,
-      update,
     };
   },
   methods: {
@@ -183,6 +90,12 @@ export default {
     },
     linkAndUnlink() {
       this.isLink = !this.isLink;
+    },
+    changeHandle(e) {
+      console.log("changeHandle:", e);
+    },
+    handlePressEnter(e) {
+      console.log("pressEnter", e);
     },
   },
 };

@@ -1,4 +1,4 @@
-# 0.1.0 (2022-10-28)
+# 0.1.0 (2022-11-08)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -12,6 +12,7 @@
  - | copy figma | [8788758](https://github.com/supermanbin/vueSamples/commit/8788758)
  counter tab | vue provide, inject & vuex count 使用方式 | [d66facc](https://github.com/supermanbin/vueSamples/commit/d66facc)
  Date Picker | add new conponent v-calendar | [7930c41](https://github.com/supermanbin/vueSamples/commit/7930c41)
+ - | emits | [d86d8f0](https://github.com/supermanbin/vueSamples/commit/d86d8f0)
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  - | grid | [3e983ad](https://github.com/supermanbin/vueSamples/commit/3e983ad)
  - | grid | [39da0e1](https://github.com/supermanbin/vueSamples/commit/39da0e1)

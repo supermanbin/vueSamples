@@ -24,7 +24,7 @@ const classNames = (...opt) => {
           getObjectClass(item);
           break;
         default:
-          cls;
+          return cls;
       }
     });
   };

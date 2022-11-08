@@ -11,26 +11,43 @@ const GridInput = defineComponent({
         return ["text", "number"].includes(type);
       },
     },
-    modelVal: { type: String },
+    value: { type: String },
   },
   slots: ["prefix"],
-  emits: ["update:value", "on-change"],
+  emits: ["update:value", "onChange", "pressEnter"],
   setup(props, ctx) {
     console.log(props, ctx);
-    const valueChange = () => {};
+    const valueChange = (e) => {
+      ctx.emit("update:value", e.target.value);
+      ctx.emit("onChange", e.target.value);
+    };
+
+    const handleKeyDown = (e) => {
+      if (e.keyCode === 13) {
+        ctx.emit("pressEnter", e);
+      }
+    };
+
+    const prefix = () => {
+      if (ctx.slots.prefix && ctx.slots.prefix()) {
+        return (
+          <span className="grid-input--label">
+            {ctx.slots.prefix && ctx.slots.prefix()}
+          </span>
+        );
+      }
+    };
 
     return () => (
       <div className="grid-input">
         <label className="grid-input-wrapper">
-          <span className="grid-input--label">
-            {ctx.slots.prefix && ctx.slots.prefix()}
-          </span>
-          {ctx.slots.default && ctx.slots.default()}
+          {prefix()}
           <input
-            value={props.modelVal}
+            value={props.value}
             className="grid-input--input"
             type={props.type}
-            onChange={valueChange}
+            onInput={valueChange}
+            onKeydown={handleKeyDown}
           />
         </label>
       </div>
