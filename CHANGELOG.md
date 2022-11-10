@@ -1,4 +1,4 @@
-# 0.1.0 (2022-11-08)
+# 0.1.0 (2022-11-10)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -31,6 +31,7 @@
  revert | test revert | [a9bee5a](https://github.com/supermanbin/vueSamples/commit/a9bee5a)
  spaceX | spaceX | [f8ff03a](https://github.com/supermanbin/vueSamples/commit/f8ff03a)
  yarn | add yarn | [e464bd2](https://github.com/supermanbin/vueSamples/commit/e464bd2)
+ 完善v-model | 完善v-model | [61bd987](https://github.com/supermanbin/vueSamples/commit/61bd987)
 
 
 范围|描述|commitId

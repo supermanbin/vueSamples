@@ -16,33 +16,51 @@
     </grid>
     <grid>
       <grid-item :grid-end="11" :has-background="false">
-        <grid-input v-model:value="position.x" type="number">
-          <font-awesome-icon icon="fas fa-x" class="icon icon--10" />
+        <grid-input
+          v-model:value="position.x"
+          type="number"
+          @onChange="changeHandle"
+        >
           <template #prefix>
-            <strong>prefix</strong>
+            <font-awesome-icon icon="fas fa-x" class="icon icon--10" />
           </template>
-        </grid-input>
-      </grid-item>
-      <grid-item :grid-start="13" :grid-end="11" :has-background="false">
-        <grid-input type="number">
-          <font-awesome-icon icon="fas fa-y" class="icon icon--10" />
-        </grid-input>
-      </grid-item>
-    </grid>
-    <grid>
-      <grid-item :grid-end="11" :has-background="false">
-        <grid-input type="number">
-          <font-awesome-icon icon="fas fa-w" class="icon icon--10" />
         </grid-input>
       </grid-item>
       <grid-item :grid-start="13" :grid-end="11" :has-background="false">
         <grid-input
           type="number"
-          v-model:value="position.x"
+          v-model:value="position.y"
+          @onChange="changeHandle"
+        >
+          <template #prefix>
+            <font-awesome-icon icon="fas fa-y" class="icon icon--10" />
+          </template>
+        </grid-input>
+      </grid-item>
+    </grid>
+    <grid>
+      <grid-item :grid-end="11" :has-background="false">
+        <grid-input
+          type="number"
+          v-model:value="position.width"
+          @onChange="changeHandle"
+          @pressEnter="handlePressEnter('WIDTH', $event)"
+        >
+          <template #prefix>
+            <font-awesome-icon icon="fas fa-w" class="icon icon--10" />
+          </template>
+        </grid-input>
+      </grid-item>
+      <grid-item :grid-start="13" :grid-end="11" :has-background="false">
+        <grid-input
+          type="number"
+          v-model:value="position.height"
           @onChange="changeHandle"
           @pressEnter="handlePressEnter"
         >
-          <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
+          <template #prefix>
+            <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
+          </template>
         </grid-input>
       </grid-item>
       <grid-item :grid-start="25" @click="linkAndUnlink">
@@ -62,26 +80,32 @@ import Grid from "@/components/Grid";
 import GridItem from "@/components/GridItem";
 import GridInput from "@/components/GridInput";
 
+const TYPE = {
+  WIDTH: "WIDTH",
+};
+
 export default {
   name: "Figma",
   components: { Grid, GridItem, GridInput },
   setup() {
     const position = ref({
-      width: 0,
-      height: 0,
+      width: "0",
+      height: "0",
       x: "0",
-      y: 0,
+      y: "0",
       rotation: "0º",
-      corner: 0,
+      corner: "0",
     });
 
     const isOpenEye = ref(true);
     const isLink = ref(false);
+    const widthAndHeightRatio = ref(1);
 
     return {
       position,
       isOpenEye,
       isLink,
+      widthAndHeightRatio,
     };
   },
   methods: {
@@ -90,12 +114,29 @@ export default {
     },
     linkAndUnlink() {
       this.isLink = !this.isLink;
+      if (this.isLink) {
+        this.widthAndHeightRatio = this.position.width / this.position.height;
+        console.log(this.widthAndHeightRatio);
+      }
     },
-    changeHandle(e) {
-      console.log("changeHandle:", e);
+    changeHandle(val) {
+      console.log(val);
+      if (this.isLink) {
+        // this.position.width = (
+        //   parseFloat(e) * this.widthAndHeightRatio
+        // ).toString();
+        // this.position.height = (
+        //   parseFloat(e) / this.widthAndHeightRatio
+        // ).toString();
+      }
     },
-    handlePressEnter(e) {
-      console.log("pressEnter", e);
+    handlePressEnter(type) {
+      console.log("pressEnter", TYPE.WIDTH);
+      if (this.position.width === "0" || this.position.height === "0") return;
+
+      if (type === TYPE.WIDTH) {
+        console.log("pressEnter", TYPE.WIDTH);
+      }
     },
   },
 };
