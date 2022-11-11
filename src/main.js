@@ -22,7 +22,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 // import { far } from "@fortawesome/free-regular-svg-icons";
-import commonPlugin from "@/plugins/commonPlugin";
+import { SHAPE_PROPERTY } from "@/common/constants/properties";
 
 /* 注册font */
 library.add(fas);
@@ -40,7 +40,11 @@ app
   .use(Row)
   .use(Col)
   .use(SetupCalendar, {})
-  .use(commonPlugin);
+  .use((app) => {
+    app.config.globalProperties.$CONSTANTS = {
+      SHAPE_PROPERTY,
+    };
+  });
 // Use the components
 app.component("Calendar", Calendar);
 app.component("DatePicker", DatePicker);

@@ -26,6 +26,7 @@
  - | improve the figma app | [84687a3](https://github.com/supermanbin/vueSamples/commit/84687a3)
  - | input | [75077d9](https://github.com/supermanbin/vueSamples/commit/75077d9)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
+ - | plugins | [bed9240](https://github.com/supermanbin/vueSamples/commit/bed9240)
  rebuild yarn | yarn | [7d00053](https://github.com/supermanbin/vueSamples/commit/7d00053)
  revert 02 | revert 02 | [fec9904](https://github.com/supermanbin/vueSamples/commit/fec9904)
  revert 03 | revert 03 | [9315e2f](https://github.com/supermanbin/vueSamples/commit/9315e2f)

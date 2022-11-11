@@ -1,6 +1,6 @@
 <script>
 import { defineComponent } from "vue";
-import classNames from "@/tools/classNames";
+import classNames from "@/common/tools/classNames";
 
 const GridItem = defineComponent({
   name: "GridItem",

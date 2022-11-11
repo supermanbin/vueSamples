@@ -44,7 +44,9 @@
           type="number"
           v-model:value="position.width"
           @onChange="changeHandle"
-          @pressEnter="handlePressEnter($COMMON.SHAPEPROPERTY.WIDTH, $event)"
+          @pressEnter="
+            handlePressEnter($CONSTANTS.SHAPE_PROPERTY.WIDTH, $event)
+          "
         >
           <template #prefix>
             <font-awesome-icon icon="fas fa-w" class="icon icon--10" />
@@ -56,7 +58,9 @@
           type="number"
           v-model:value="position.height"
           @onChange="changeHandle"
-          @pressEnter="handlePressEnter($COMMON.SHAPEPROPERTY.HEIGHT, $event)"
+          @pressEnter="
+            handlePressEnter($CONSTANTS.SHAPE_PROPERTY.HEIGHT, $event)
+          "
         >
           <template #prefix>
             <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
@@ -127,11 +131,25 @@ export default {
       }
     },
     handlePressEnter(type) {
-      console.log(type);
-      if (this.position.width === "0" || this.position.height === "0") return;
+      if (!this.isLink) return;
+      // 根据长高比算出高度
+      if (
+        type === this.$CONSTANTS.SHAPE_PROPERTY.WIDTH &&
+        this.position.width !== "0"
+      ) {
+        this.position.height = (
+          parseFloat(this.position.width) / this.widthAndHeightRatio
+        ).toString();
+      }
 
-      if (type === this.$COMMON.SHAPEPROPERTY.WIDTH) {
-        console.log("pressEnter", type);
+      // 根据长高比算出宽度
+      if (
+        type === this.$CONSTANTS.SHAPE_PROPERTY.HEIGHT &&
+        this.position.height !== "0"
+      ) {
+        this.position.width = (
+          parseFloat(this.position.height) * this.widthAndHeightRatio
+        ).toString();
       }
     },
   },

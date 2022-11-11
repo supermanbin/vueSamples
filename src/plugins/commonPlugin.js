@@ -1,7 +1,6 @@
-export default function (app, options) {
-  console.log(app, options);
+export default function (app) {
   app.config.globalProperties.$COMMON = {
-    SHAPEPROPERTY: {
+    SHAPE_PROPERTY: {
       WIDTH: "WIDTH",
       HEIGHT: "HEIGHT",
     },
