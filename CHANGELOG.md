@@ -1,4 +1,4 @@
-# 0.1.0 (2022-11-10)
+# 0.1.0 (2022-11-11)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -23,6 +23,7 @@
  grid | grid | [a7af446](https://github.com/supermanbin/vueSamples/commit/a7af446)
  - | gridInput | [5a99c09](https://github.com/supermanbin/vueSamples/commit/5a99c09)
  - | improve the figma | [099399b](https://github.com/supermanbin/vueSamples/commit/099399b)
+ - | improve the figma app | [84687a3](https://github.com/supermanbin/vueSamples/commit/84687a3)
  - | input | [75077d9](https://github.com/supermanbin/vueSamples/commit/75077d9)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
  rebuild yarn | yarn | [7d00053](https://github.com/supermanbin/vueSamples/commit/7d00053)

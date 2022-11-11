@@ -44,7 +44,7 @@
           type="number"
           v-model:value="position.width"
           @onChange="changeHandle"
-          @pressEnter="handlePressEnter('WIDTH', $event)"
+          @pressEnter="handlePressEnter($COMMON.SHAPEPROPERTY.WIDTH, $event)"
         >
           <template #prefix>
             <font-awesome-icon icon="fas fa-w" class="icon icon--10" />
@@ -56,7 +56,7 @@
           type="number"
           v-model:value="position.height"
           @onChange="changeHandle"
-          @pressEnter="handlePressEnter"
+          @pressEnter="handlePressEnter($COMMON.SHAPEPROPERTY.HEIGHT, $event)"
         >
           <template #prefix>
             <font-awesome-icon icon="fas fa-h" class="icon icon--10" />
@@ -79,10 +79,6 @@ import { ref } from "vue";
 import Grid from "@/components/Grid";
 import GridItem from "@/components/GridItem";
 import GridInput from "@/components/GridInput";
-
-const TYPE = {
-  WIDTH: "WIDTH",
-};
 
 export default {
   name: "Figma",
@@ -131,11 +127,11 @@ export default {
       }
     },
     handlePressEnter(type) {
-      console.log("pressEnter", TYPE.WIDTH);
+      console.log(type);
       if (this.position.width === "0" || this.position.height === "0") return;
 
-      if (type === TYPE.WIDTH) {
-        console.log("pressEnter", TYPE.WIDTH);
+      if (type === this.$COMMON.SHAPEPROPERTY.WIDTH) {
+        console.log("pressEnter", type);
       }
     },
   },

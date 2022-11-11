@@ -1,4 +1,4 @@
-import { createApp, Vue } from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./routers";
 import store from "./store";
@@ -22,6 +22,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 // import { far } from "@fortawesome/free-regular-svg-icons";
+import commonPlugin from "@/plugins/commonPlugin";
 
 /* 注册font */
 library.add(fas);
@@ -38,7 +39,8 @@ app
   .use(Select)
   .use(Row)
   .use(Col)
-  .use(SetupCalendar, {});
+  .use(SetupCalendar, {})
+  .use(commonPlugin);
 // Use the components
 app.component("Calendar", Calendar);
 app.component("DatePicker", DatePicker);
