@@ -89,10 +89,10 @@ export default {
   components: { Grid, GridItem, GridInput },
   setup() {
     const position = ref({
-      width: "0",
-      height: "0",
-      x: "0",
-      y: "0",
+      width: 0,
+      height: 0,
+      x: 0,
+      y: 0,
       rotation: "0º",
       corner: "0",
     });
@@ -112,44 +112,40 @@ export default {
     openAndCloseEye() {
       this.isOpenEye = !this.isOpenEye;
     },
+    change(e) {
+      console.log(e.target.value);
+    },
     linkAndUnlink() {
       this.isLink = !this.isLink;
-      if (this.isLink) {
+
+      if (this.isLink && this.position.height) {
+        if (!this.position.width) {
+          this.widthAndHeightRatio = 1;
+        }
         this.widthAndHeightRatio = this.position.width / this.position.height;
-        console.log(this.widthAndHeightRatio);
       }
     },
     changeHandle(val) {
       console.log(val);
-      if (this.isLink) {
-        // this.position.width = (
-        //   parseFloat(e) * this.widthAndHeightRatio
-        // ).toString();
-        // this.position.height = (
-        //   parseFloat(e) / this.widthAndHeightRatio
-        // ).toString();
-      }
+      // if (this.isLink) {
+      // }
     },
     handlePressEnter(type) {
       if (!this.isLink) return;
       // 根据长高比算出高度
       if (
         type === this.$CONSTANTS.SHAPE_PROPERTY.WIDTH &&
-        this.position.width !== "0"
+        this.position.width
       ) {
-        this.position.height = (
-          parseFloat(this.position.width) / this.widthAndHeightRatio
-        ).toString();
+        this.position.height = this.position.width / this.widthAndHeightRatio;
       }
 
       // 根据长高比算出宽度
       if (
         type === this.$CONSTANTS.SHAPE_PROPERTY.HEIGHT &&
-        this.position.height !== "0"
+        this.position.height
       ) {
-        this.position.width = (
-          parseFloat(this.position.height) * this.widthAndHeightRatio
-        ).toString();
+        this.position.width = this.position.height * this.widthAndHeightRatio;
       }
     },
   },

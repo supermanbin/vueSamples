@@ -1,4 +1,4 @@
-# 0.1.0 (2022-11-11)
+# 0.1.0 (2022-11-19)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -35,6 +35,7 @@
  spaceX | spaceX | [f8ff03a](https://github.com/supermanbin/vueSamples/commit/f8ff03a)
  yarn | add yarn | [e464bd2](https://github.com/supermanbin/vueSamples/commit/e464bd2)
  完善v-model | 完善v-model | [61bd987](https://github.com/supermanbin/vueSamples/commit/61bd987)
+ - | 等比宽高计算 | [921f8fe](https://github.com/supermanbin/vueSamples/commit/921f8fe)
 
 
 范围|描述|commitId

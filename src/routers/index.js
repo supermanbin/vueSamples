@@ -1,11 +1,11 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Figma from "../views/Figma.vue";
 import store from "../store";
 
 const routes = [
   {
     path: "/",
-    redirect: "/grid",
+    redirect: "/figma",
   },
   {
     path: "/figma",
@@ -45,15 +45,14 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
 /**
  * 路由
  */
-router.beforeEach((guard, from) => {
-  console.log(guard, from);
+router.beforeEach((guard) => {
   // 刷新页面重置菜单选中状态
   store.commit("changeMenuSelectKeys", [guard.path]);
 });
