@@ -29,6 +29,12 @@
  调试服务端 | 调试服务端 | [d08a7c6](https://github.com/supermanbin/vueSamples/commit/d08a7c6)
 
 
+### 🎨 代码样式
+范围|描述|commitId
+--|--|--
+ - | 修改数组长度 | [0a15777](https://github.com/supermanbin/vueSamples/commit/0a15777)
+
+
 范围|描述|commitId
 --|--|--
  - | Revert "feat(revert 02): revert 02" | [62b2fb6](https://github.com/supermanbin/vueSamples/commit/62b2fb6)
