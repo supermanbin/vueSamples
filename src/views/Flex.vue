@@ -65,7 +65,7 @@ export default {
     //   ? localStorage.getItem("team").split(",")
     //   : [];
     const t =
-      "老邓,春鹏,王超,蔡伟,吴迪,家龙,张强,大洋,陈壮,大黄,老冯,沈伟,小闯,老何,正锋,大斌,大松,成成,东哥,老肖,书生,王坤,阿文,赵磊".split(
+      "大斌,大松".split(
         ","
       );
     const team = ref(t);

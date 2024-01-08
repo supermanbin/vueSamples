@@ -1,18 +1,18 @@
-# 0.1.0 (2022-01-06)
+# 0.1.0 (2024-01-08)
 
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
- all | 足球队分队 | [87ee3f7](https://github.com/supermanbin/vueSamples/commit/87ee3f7)
- all | 足球队分队 | [ec40b0c](https://github.com/supermanbin/vueSamples/commit/ec40b0c)
  All | add git commit standard | [986a9f2](https://github.com/supermanbin/vueSamples/commit/986a9f2)
  all | emit | [186da1e](https://github.com/supermanbin/vueSamples/commit/186da1e)
  all | provide & inject使用 | [81f4ae9](https://github.com/supermanbin/vueSamples/commit/81f4ae9)
+ all | 足球队分队 | [87ee3f7](https://github.com/supermanbin/vueSamples/commit/87ee3f7)
+ all | 足球队分队 | [ec40b0c](https://github.com/supermanbin/vueSamples/commit/ec40b0c)
  App.vue, test file | test merge only one file | [acf171f](https://github.com/supermanbin/vueSamples/commit/acf171f)
  chat | created a chat component | [6bf12fc](https://github.com/supermanbin/vueSamples/commit/6bf12fc)
  counter tab | vue provide, inject & vuex count 使用方式 | [d66facc](https://github.com/supermanbin/vueSamples/commit/d66facc)
- Counter | 区分Counter写法 | [9220b65](https://github.com/supermanbin/vueSamples/commit/9220b65)
  counter | use vuex to build a counter | [ed52a78](https://github.com/supermanbin/vueSamples/commit/ed52a78)
+ Counter | 区分Counter写法 | [9220b65](https://github.com/supermanbin/vueSamples/commit/9220b65)
  flex page | add new component | [1f93900](https://github.com/supermanbin/vueSamples/commit/1f93900)
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
@@ -23,7 +23,10 @@
  solt | solt | [14be79c](https://github.com/supermanbin/vueSamples/commit/14be79c)
  spaceX request | 使用vuex做状态管理 | [80e1b68](https://github.com/supermanbin/vueSamples/commit/80e1b68)
  spaceX | spaceX | [f8ff03a](https://github.com/supermanbin/vueSamples/commit/f8ff03a)
+ - | test | [12559ea](https://github.com/supermanbin/vueSamples/commit/12559ea)
  vuex | vuex | [e3b5168](https://github.com/supermanbin/vueSamples/commit/e3b5168)
+ 所有 | counter of vuex | [6b8e811](https://github.com/supermanbin/vueSamples/commit/6b8e811)
+ 调试服务端 | 调试服务端 | [d08a7c6](https://github.com/supermanbin/vueSamples/commit/d08a7c6)
 
 
 范围|描述|commitId
