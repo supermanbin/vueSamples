@@ -14,6 +14,7 @@
  counter | use vuex to build a counter | [ed52a78](https://github.com/supermanbin/vueSamples/commit/ed52a78)
  Counter | 区分Counter写法 | [9220b65](https://github.com/supermanbin/vueSamples/commit/9220b65)
  flex page | add new component | [1f93900](https://github.com/supermanbin/vueSamples/commit/1f93900)
+ git merge | git merge | [23f52a0](https://github.com/supermanbin/vueSamples/commit/23f52a0)
  global | optimize commit command | [f62a3aa](https://github.com/supermanbin/vueSamples/commit/f62a3aa)
  menu | 修改菜单 | [c4fb26d](https://github.com/supermanbin/vueSamples/commit/c4fb26d)
  revert 02 | revert 02 | [fec9904](https://github.com/supermanbin/vueSamples/commit/fec9904)
