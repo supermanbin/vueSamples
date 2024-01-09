@@ -26,6 +26,7 @@
  spaceX request | 使用vuex做状态管理 | [80e1b68](https://github.com/supermanbin/vueSamples/commit/80e1b68)
  spaceX | spaceX | [f8ff03a](https://github.com/supermanbin/vueSamples/commit/f8ff03a)
  - | test | [12559ea](https://github.com/supermanbin/vueSamples/commit/12559ea)
+ - | use-vuex-counter | [231e3a6](https://github.com/supermanbin/vueSamples/commit/231e3a6)
  vuex | vuex | [e3b5168](https://github.com/supermanbin/vueSamples/commit/e3b5168)
  所有 | counter of vuex | [6b8e811](https://github.com/supermanbin/vueSamples/commit/6b8e811)
  调试服务端 | 调试服务端 | [d08a7c6](https://github.com/supermanbin/vueSamples/commit/d08a7c6)
