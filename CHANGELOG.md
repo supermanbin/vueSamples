@@ -1,4 +1,4 @@
-# 0.1.0 (2024-01-08)
+# 0.1.0 (2024-01-09)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -33,6 +33,7 @@
 范围|描述|commitId
 --|--|--
  - | 修改数组长度 | [0a15777](https://github.com/supermanbin/vueSamples/commit/0a15777)
+ - | 分组长度修改 | [2af341d](https://github.com/supermanbin/vueSamples/commit/2af341d)
 
 
 范围|描述|commitId
