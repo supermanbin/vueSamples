@@ -33,7 +33,60 @@
     </li>
   </ul>
 
-  <div class="anchor-target">fasdfads</div>
+  <div class="anchor-target"></div>
+
+  <div class="scroll-wrapper">
+    <div class="scroll-item">
+      <h3 data-splitting data-scroll>Using NPM</h3>
+      <div>
+        Import Splitting from the package and call it. The CSS imports may vary
+        depending on your bundler.
+      </div>
+    </div>
+    <div class="scroll-item">
+      <h3 data-splitting data-scroll>Using a CDN</h3>
+      <div>
+        CDN use is only recommended for demos / experiments on platforms like
+        CodePen. For production use, bundle Splitting using the NPM package with
+        Webpack or your preferred code bundler.
+      </div>
+    </div>
+    <div class="scroll-item">
+      <h3 data-splitting data-scroll>Recommended Styles</h3>
+      <div>
+        Included in the package are two small stylesheets of recommended CSS
+        that will make text and grid based effects much easier. These styles are
+        non-essential, but provide a lot of value.
+      </div>
+    </div>
+    <div class="scroll-item">
+      <h3 data-splitting data-scroll>Browser Support</h3>
+      <div>
+        Splitting should be thought of as a progressive enhancer. The basic
+        functions work in any halfway decent browser (IE11+). Browsers that
+        support CSS Variables ( ~85% of the current browser market share ) will
+        have the best experience. Browsers without CSS Variable support can
+        still have a nice experience with at least some animation, but features
+        like index-based staggering may not be feasible without JavaScript.
+      </div>
+    </div>
+    <div class="scroll-item">
+      <h3 data-splitting data-scroll>Plugins</h3>
+      <div>
+        Plugins are the heart of Splitting, each performing a specific split on
+        the targeted element(s). Some plugins have dependencies that will
+        automatically run when called. For example chars will automatically
+        split by words to prevent issues with text wrapping.
+      </div>
+    </div>
+    <div class="scroll-item">
+      <h3 data-splitting data-scroll>words</h3>
+      <div>
+        The words plugin splits an element's text into separate words, wrapping
+        each in a &lt;span&gt; populated with CSS variables and data attributes.
+      </div>
+    </div>
+  </div>
 
   <a-drawer
     title="Drawer aaaa"
@@ -66,14 +119,24 @@
 <script>
 // @ is an alias to /src
 import { ref } from "vue";
+import ScrollOut from "scroll-out";
+import Splitting from "splitting";
 import kSelect from "@/components/kSelect.vue";
 import kButton from "@/components/kButton";
+
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
 
 export default {
   name: "Grid",
   components: { kSelect, kButton },
   created() {},
-  mounted() {},
+  mounted() {
+    ScrollOut({
+      once: true,
+    });
+    Splitting();
+  },
   setup() {
     const size = ref("12px");
     const onChangeSize = (c) => {
@@ -85,6 +148,8 @@ export default {
     const showDrawer = () => {
       drawerVisible.value = true;
     };
+
+    // https://picsum.photos/  获取随机图片站点
 
     return { size, drawerVisible, onChangeSize, showDrawer };
   },
@@ -127,24 +192,50 @@ export default {
 
 .grid {
   list-style: none;
+  position: relative;
   margin: 30px 0;
   padding: 0;
   display: grid;
   grid-template-columns: 300px 300px;
-  grid-gap: 20px;
-  position: relative;
   z-index: 2;
   max-height: 70vh;
   place-items: center;
 
   li {
-    padding: 20px;
+    position: relative;
     p {
       margin: 0;
+      padding: 20px;
     }
+
+    /*&::before {
+      position: absolute;
+      content: "";
+      inset: 0 0 0 0;
+      background-size: 20px 20px;
+      border-radius: 20px;
+      background-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.3) 1px,
+          transparent 1px
+        ),
+        linear-gradient(to left, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 1) 50%,
+        transparent
+      );
+      inset: 0 0 0 0;
+    }*/
   }
 }
-
+:root {
+  --haha: --anchor1;
+}
 li:nth-of-type(1) {
   anchor-name: --anchor1;
 }
@@ -158,32 +249,68 @@ li:nth-of-type(4) p {
   anchor-name: --anchor4;
 }
 
-:root {
-  --color-a: rgba(255, 0, 0, 1);
+:root:has(li:nth-of-type(1):hover) {
   --haha: --anchor1;
 }
-
-.grid:has(li:nth-of-type(1):hover) {
-  --haha: --anchor1;
-}
-.grid:has(li:nth-of-type(2):hover) {
+:root:has(li:nth-of-type(2):hover) {
   --haha: --anchor2;
-  --color-a: blue;
 }
-.grid:has(li:nth-of-type(3):hover) {
+:root:has(li:nth-of-type(3):hover) {
   --haha: --anchor3;
 }
-.grid:has(li:nth-of-type(4):hover) {
+:root:has(li:nth-of-type(4):hover) {
   --haha: --anchor4;
 }
 .anchor-target {
-  color: var(--color-a);
   position: absolute;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
   //z-index: -1;
   position-anchor: var(--haha);
   inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
-  transition: inset 0.3s 1s;
+  //top: anchor(top);
+  //right: anchor(right);
+  //bottom: anchor(bottom);
+  //left: anchor(left);
+  transition: inset 0.3s;
+  border-radius: 8px;
+}
+
+.scroll-wrapper {
+  display: grid;
+  grid-gap: 30px;
+  width: 800px;
+}
+.scroll-item {
+  height: 400px;
+}
+.scroll-item h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.scroll-item h3[data-scroll] {
+  overflow: hidden;
+  .char {
+    transition: opacity ease 0.5s, transform ease 0.6s;
+    transition-delay: calc(0.3s * var(--char-index) / var(--char-total));
+  }
+}
+.scroll-item h3[data-scroll="in"] {
+  .char {
+    opacity: 1;
+    transform: translateY(0);
+    /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards
+    //scrollWord;
+    //animation-delay: calc(0.2s + (0.04s * var(--char-index)))*/
+  }
+}
+.scroll-item h3[data-scroll="out"] {
+  .char {
+    opacity: 0;
+    transform: translateY(100%);
+    /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards
+    //scrollWord;
+    //animation-delay: calc(0.2s + (0.04s * var(--char-index)))*/
+  }
 }
 </style>

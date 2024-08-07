@@ -1,4 +1,4 @@
-# 0.1.0 (2024-08-06)
+# 0.1.0 (2024-08-07)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -10,6 +10,7 @@
  All | add git commit standard | [986a9f2](https://github.com/supermanbin/vueSamples/commit/986a9f2)
  all | emit | [186da1e](https://github.com/supermanbin/vueSamples/commit/186da1e)
  all | provide & inject使用 | [81f4ae9](https://github.com/supermanbin/vueSamples/commit/81f4ae9)
+ - | anchor | [3eaaf00](https://github.com/supermanbin/vueSamples/commit/3eaaf00)
  App.vue, test file | test merge only one file | [acf171f](https://github.com/supermanbin/vueSamples/commit/acf171f)
  chat | created a chat component | [6bf12fc](https://github.com/supermanbin/vueSamples/commit/6bf12fc)
  counter tab | vue provide, inject & vuex count 使用方式 | [d66facc](https://github.com/supermanbin/vueSamples/commit/d66facc)
