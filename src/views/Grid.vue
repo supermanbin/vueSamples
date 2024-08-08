@@ -38,52 +38,95 @@
   <div class="scroll-wrapper">
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Using NPM</h3>
-      <div>
-        Import Splitting from the package and call it. The CSS imports may vary
-        depending on your bundler.
+      <div class="grid">
+        <div>
+          Import Splitting from the package and call it. The CSS imports may
+          vary depending on your bundler.
+        </div>
+        <div>
+          Import Splitting from the package and call it. The CSS imports may
+          vary depending on your bundler.
+        </div>
       </div>
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Using a CDN</h3>
-      <div>
-        CDN use is only recommended for demos / experiments on platforms like
-        CodePen. For production use, bundle Splitting using the NPM package with
-        Webpack or your preferred code bundler.
+      <div class="grid">
+        <div>
+          CDN use is only recommended for demos / experiments on platforms like
+          CodePen. For production use, bundle Splitting using the NPM package
+          with Webpack or your preferred code bundler.
+        </div>
+        <div>
+          CDN use is only recommended for demos / experiments on platforms like
+          CodePen. For production use, bundle Splitting using the NPM package
+          with Webpack or your preferred code bundler.
+        </div>
       </div>
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Recommended Styles</h3>
-      <div>
-        Included in the package are two small stylesheets of recommended CSS
-        that will make text and grid based effects much easier. These styles are
-        non-essential, but provide a lot of value.
+      <div class="grid">
+        <div>
+          Included in the package are two small stylesheets of recommended CSS
+          that will make text and grid based effects much easier. These styles
+          are non-essential, but provide a lot of value.
+        </div>
+        <div>
+          Included in the package are two small stylesheets of recommended CSS
+          that will make text and grid based effects much easier. These styles
+          are non-essential, but provide a lot of value.
+        </div>
       </div>
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Browser Support</h3>
-      <div>
-        Splitting should be thought of as a progressive enhancer. The basic
-        functions work in any halfway decent browser (IE11+). Browsers that
-        support CSS Variables ( ~85% of the current browser market share ) will
-        have the best experience. Browsers without CSS Variable support can
-        still have a nice experience with at least some animation, but features
-        like index-based staggering may not be feasible without JavaScript.
+      <div class="grid">
+        <div>
+          Splitting should be thought of as a progressive enhancer. The basic
+          functions work in any halfway decent browser (IE11+). Browsers that
+          support CSS Variables ( ~85% of the current browser market share )
+          will have the best experience. Browsers without CSS Variable support
+          can still have a nice experience with at least some animation, but
+          features like index-based staggering may not be feasible without
+          JavaScript.
+        </div>
+        <div>
+          Plugins are the heart of Splitting, each performing a specific split
+          on the targeted element(s). Some plugins have dependencies that will
+          automatically run when called. For example chars will automatically
+          split by words to prevent issues with text wrapping.
+        </div>
       </div>
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Plugins</h3>
-      <div>
-        Plugins are the heart of Splitting, each performing a specific split on
-        the targeted element(s). Some plugins have dependencies that will
-        automatically run when called. For example chars will automatically
-        split by words to prevent issues with text wrapping.
+      <div class="grid">
+        <div data-splitting data-scroll>
+          Plugins are the heart of Splitting, each performing a specific split
+          on the targeted element(s). Some plugins have dependencies that will
+          automatically run when called. For example chars will automatically
+          split by words to prevent issues with text wrapping.
+        </div>
+        <div>
+          Splitting should be thought of as a progressive enhancer. The basic
+          functions work in any halfway decent browser (IE11+). Browsers that
+          support CSS Variables ( ~85% of the current browser market share )
+          will have the best experience. Browsers without CSS Variable support
+          can still have a nice experience with at least some animation, but
+          features like index-based staggering may not be feasible without
+          JavaScript.
+        </div>
       </div>
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>words</h3>
-      <div>
-        The words plugin splits an element's text into separate words, wrapping
-        each in a &lt;span&gt; populated with CSS variables and data attributes.
+      <div class="grid">
+        <div>
+          The words plugin splits an element's text into separate words,
+          wrapping each in a &lt;span&gt; populated with CSS variables and data
+          attributes.
+        </div>
       </div>
     </div>
   </div>
@@ -132,10 +175,13 @@ export default {
   components: { kSelect, kButton },
   created() {},
   mounted() {
-    ScrollOut({
-      once: true,
+    ScrollOut();
+    const h3Split = Splitting({
+      target: "[data-splitting]",
+      by: "words", // splitting的类型：chars | words | lines
+      key: "", // 给css variables添加的前缀
     });
-    Splitting();
+    console.log(h3Split);
   },
   setup() {
     const size = ref("12px");
@@ -196,10 +242,11 @@ export default {
   margin: 30px 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 300px 300px;
+  grid-template-columns: repeat(2, 300px);
+  grid-auto-rows: 200px;
   z-index: 2;
   max-height: 70vh;
-  place-items: center;
+  //place-items: center;
 
   li {
     position: relative;
@@ -235,6 +282,7 @@ export default {
 }
 :root {
   --haha: --anchor1;
+  --active: 0;
 }
 li:nth-of-type(1) {
   anchor-name: --anchor1;
@@ -251,15 +299,19 @@ li:nth-of-type(4) p {
 
 :root:has(li:nth-of-type(1):hover) {
   --haha: --anchor1;
+  --active: 1;
 }
 :root:has(li:nth-of-type(2):hover) {
   --haha: --anchor2;
+  --active: 1;
 }
 :root:has(li:nth-of-type(3):hover) {
   --haha: --anchor3;
+  --active: 1;
 }
 :root:has(li:nth-of-type(4):hover) {
   --haha: --anchor4;
+  --active: 1;
 }
 .anchor-target {
   position: absolute;
@@ -272,8 +324,9 @@ li:nth-of-type(4) p {
   //right: anchor(right);
   //bottom: anchor(bottom);
   //left: anchor(left);
-  transition: inset 0.3s;
+  transition: inset 0.3s, opacity 0.3s;
   border-radius: 8px;
+  opacity: var(--active);
 }
 
 .scroll-wrapper {
@@ -288,29 +341,31 @@ li:nth-of-type(4) p {
   font-size: 20px;
   font-weight: 500;
 }
-.scroll-item h3[data-scroll] {
+[data-scroll] {
   overflow: hidden;
-  .char {
-    transition: opacity ease 0.5s, transform ease 0.6s;
-    transition-delay: calc(0.3s * var(--char-index) / var(--char-total));
-  }
 }
-.scroll-item h3[data-scroll="in"] {
-  .char {
-    opacity: 1;
-    transform: translateY(0);
-    /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards
-    //scrollWord;
-    //animation-delay: calc(0.2s + (0.04s * var(--char-index)))*/
-  }
+[data-scroll] .char,
+[data-scroll] .word {
+  transition: opacity ease 0.5s, transform ease 0.6s;
+  transition-delay: calc(0.3s * var(--word-index) / var(--word-total));
 }
-.scroll-item h3[data-scroll="out"] {
-  .char {
-    opacity: 0;
-    transform: translateY(100%);
-    /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards
-    //scrollWord;
-    //animation-delay: calc(0.2s + (0.04s * var(--char-index)))*/
-  }
+[data-scroll] .char {
+  transition-delay: calc(0.3s * var(--char-index) / var(--char-total));
+}
+[data-scroll="in"] .char,
+[data-scroll="in"] .word {
+  opacity: 1;
+  transform: translateY(0);
+  /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards
+  //scrollWord;
+  //animation-delay: calc(0.2s + (0.04s * var(--char-index)))*/
+}
+[data-scroll="out"] .char,
+[data-scroll="out"] .word {
+  opacity: 0;
+  transform: translateY(100%);
+  /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards
+  //scrollWord;
+  //animation-delay: calc(0.2s + (0.04s * var(--char-index)))*/
 }
 </style>
