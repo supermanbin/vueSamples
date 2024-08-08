@@ -3,7 +3,7 @@
   <k-select @change-size="onChangeSize" />
   <k-button @click="showDrawer">aaa</k-button>
 
-  <ul class="grid">
+  <ul class="grid-li">
     <li @click="liClick">
       <p>You can use curly braces to add text to element</p>
     </li>
@@ -38,7 +38,7 @@
   <div class="scroll-wrapper">
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Using NPM</h3>
-      <div class="grid">
+      <div class="grid" data-scroll>
         <div>
           Import Splitting from the package and call it. The CSS imports may
           vary depending on your bundler.
@@ -102,7 +102,7 @@
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Plugins</h3>
       <div class="grid">
-        <div data-splitting data-scroll>
+        <div>
           Plugins are the heart of Splitting, each performing a specific split
           on the targeted element(s). Some plugins have dependencies that will
           automatically run when called. For example chars will automatically
@@ -176,12 +176,16 @@ export default {
   created() {},
   mounted() {
     ScrollOut();
-    const h3Split = Splitting({
+    Splitting({
       target: "[data-splitting]",
       by: "words", // splitting的类型：chars | words | lines
       key: "", // 给css variables添加的前缀
     });
-    console.log(h3Split);
+    Splitting({
+      target: ".grid",
+      by: "items",
+      match: "div",
+    });
   },
   setup() {
     const size = ref("12px");
@@ -236,10 +240,11 @@ export default {
   overflow-y: auto;
 }
 
-.grid {
+.grid,
+.grid-li {
   list-style: none;
   position: relative;
-  margin: 30px 0;
+  margin: 20px 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 300px);
@@ -334,6 +339,9 @@ li:nth-of-type(4) p {
   grid-gap: 30px;
   width: 800px;
 }
+h3 {
+  margin-bottom: 0;
+}
 .scroll-item {
   height: 400px;
 }
@@ -342,7 +350,7 @@ li:nth-of-type(4) p {
   font-weight: 500;
 }
 [data-scroll] {
-  overflow: hidden;
+  //overflow: hidden;
 }
 [data-scroll] .char,
 [data-scroll] .word {

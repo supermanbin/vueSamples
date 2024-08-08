@@ -26,6 +26,7 @@
  revert 03 | revert 03 | [9315e2f](https://github.com/supermanbin/vueSamples/commit/9315e2f)
  revert | test git revert | [7c62b6b](https://github.com/supermanbin/vueSamples/commit/7c62b6b)
  revert | test revert | [a9bee5a](https://github.com/supermanbin/vueSamples/commit/a9bee5a)
+ - | scroll effect | [7d22ccb](https://github.com/supermanbin/vueSamples/commit/7d22ccb)
  - | scroll-out | [8bcfd7c](https://github.com/supermanbin/vueSamples/commit/8bcfd7c)
  solt | solt | [14be79c](https://github.com/supermanbin/vueSamples/commit/14be79c)
  spaceX request | 使用vuex做状态管理 | [80e1b68](https://github.com/supermanbin/vueSamples/commit/80e1b68)
