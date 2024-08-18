@@ -286,35 +286,35 @@ export default {
   }
 }
 :root {
-  --haha: --anchor1;
+  //--haha: --anchor1;
   --active: 0;
 }
-li:nth-of-type(1) {
+.grid-li li:nth-of-type(1) {
   anchor-name: --anchor1;
 }
-li:nth-of-type(2) {
+.grid-li li:nth-of-type(2) {
   anchor-name: --anchor2;
 }
-li:nth-of-type(3) p {
+.grid-li li:nth-of-type(3) p {
   anchor-name: --anchor3;
 }
-li:nth-of-type(4) p {
+.grid-li li:nth-of-type(4) p {
   anchor-name: --anchor4;
 }
 
-:root:has(li:nth-of-type(1):hover) {
+:root:has(.grid-li li:nth-of-type(1):hover) {
   --haha: --anchor1;
   --active: 1;
 }
-:root:has(li:nth-of-type(2):hover) {
+:root:has(.grid-li li:nth-of-type(2):hover) {
   --haha: --anchor2;
   --active: 1;
 }
-:root:has(li:nth-of-type(3):hover) {
+:root:has(.grid-li li:nth-of-type(3):hover) {
   --haha: --anchor3;
   --active: 1;
 }
-:root:has(li:nth-of-type(4):hover) {
+:root:has(.grid-li li:nth-of-type(4):hover) {
   --haha: --anchor4;
   --active: 1;
 }
@@ -329,7 +329,7 @@ li:nth-of-type(4) p {
   //right: anchor(right);
   //bottom: anchor(bottom);
   //left: anchor(left);
-  transition: inset 0.3s, opacity 0.3s;
+  transition: inset 0.3s, opacity 0.4s;
   border-radius: 8px;
   opacity: var(--active);
 }
