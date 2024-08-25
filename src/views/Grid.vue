@@ -51,7 +51,7 @@
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Using a CDN</h3>
-      <div class="grid">
+      <div class="grid" data-scroll>
         <div>
           CDN use is only recommended for demos / experiments on platforms like
           CodePen. For production use, bundle Splitting using the NPM package
@@ -66,7 +66,7 @@
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Recommended Styles</h3>
-      <div class="grid">
+      <div class="grid" data-scroll>
         <div>
           Included in the package are two small stylesheets of recommended CSS
           that will make text and grid based effects much easier. These styles
@@ -81,7 +81,7 @@
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Browser Support</h3>
-      <div class="grid">
+      <div class="grid" data-scroll>
         <div>
           Splitting should be thought of as a progressive enhancer. The basic
           functions work in any halfway decent browser (IE11+). Browsers that
@@ -101,7 +101,7 @@
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>Plugins</h3>
-      <div class="grid">
+      <div class="grid" data-scroll>
         <div>
           Plugins are the heart of Splitting, each performing a specific split
           on the targeted element(s). Some plugins have dependencies that will
@@ -121,7 +121,7 @@
     </div>
     <div class="scroll-item">
       <h3 data-splitting data-scroll>words</h3>
-      <div class="grid">
+      <div class="grid" data-scroll>
         <div>
           The words plugin splits an element's text into separate words,
           wrapping each in a &lt;span&gt; populated with CSS variables and data
@@ -129,6 +129,19 @@
         </div>
       </div>
     </div>
+    <svg class="content__img content__img--2" width="500" height="225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 225">
+      <defs>
+        <filter id="displacementFilter2">
+          <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="1" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" result="displacement" scale="100" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+          <feMorphology operator="dilate" radius="2" result="morph" in="displacement"></feMorphology>
+        </filter>
+        <mask id="circleMask2">
+          <circle cx="50%" cy="50%" r="100" data-value-final="950" fill="white" class="mask" style="filter: url(#displacementFilter2);"></circle>
+        </mask>
+      </defs>
+      <image xlink:href="../assets/2.jpg" width="500" height="225" mask="url(#circleMask2)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; filter: brightness(150%);" data-svg-origin="500 225" transform="matrix(1.2,0,0,1.2,-100,-45)"></image>
+    </svg>
   </div>
 
   <a-drawer
@@ -177,13 +190,13 @@ export default {
   mounted() {
     ScrollOut();
     Splitting({
-      target: "[data-splitting]",
+      target: "h3[data-splitting]",
       by: "words", // splitting的类型：chars | words | lines
       key: "", // 给css variables添加的前缀
     });
     Splitting({
       target: ".grid",
-      by: "items",
+      by: "lines",
       match: "div",
     });
   },
@@ -248,7 +261,7 @@ export default {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 300px);
-  grid-auto-rows: 200px;
+  //grid-auto-rows: 200px;
   z-index: 2;
   max-height: 70vh;
   //place-items: center;
@@ -343,7 +356,7 @@ h3 {
   margin-bottom: 0;
 }
 .scroll-item {
-  height: 400px;
+  //height: 400px;
 }
 .scroll-item h3 {
   font-size: 20px;
@@ -353,15 +366,22 @@ h3 {
   //overflow: hidden;
 }
 [data-scroll] .char,
-[data-scroll] .word {
+[data-scroll] .word,
+[data-scroll] .lines {
   transition: opacity ease 0.5s, transform ease 0.6s;
+}
+[data-scroll] .word {
   transition-delay: calc(0.3s * var(--word-index) / var(--word-total));
 }
 [data-scroll] .char {
   transition-delay: calc(0.3s * var(--char-index) / var(--char-total));
 }
+.lines[data-scroll] .word {
+  transition-delay: calc(0.3s * var(--line-index) / var(--line-total));
+}
 [data-scroll="in"] .char,
-[data-scroll="in"] .word {
+[data-scroll="in"] .word,
+.lines[data-scroll="in"] .word {
   opacity: 1;
   transform: translateY(0);
   /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards
@@ -369,7 +389,8 @@ h3 {
   //animation-delay: calc(0.2s + (0.04s * var(--char-index)))*/
 }
 [data-scroll="out"] .char,
-[data-scroll="out"] .word {
+[data-scroll="out"] .word,
+.lines[data-scroll="out"] .word {
   opacity: 0;
   transform: translateY(100%);
   /* animation: 0.6s ease-in calc(0.2s + (0.04s * var(--char-index))) forwards

@@ -1,4 +1,4 @@
-# 0.1.0 (2024-08-18)
+# 0.1.0 (2024-08-25)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -43,6 +43,12 @@
 --|--|--
  - | 修改数组长度 | [0a15777](https://github.com/supermanbin/vueSamples/commit/0a15777)
  - | 分组长度修改 | [2af341d](https://github.com/supermanbin/vueSamples/commit/2af341d)
+
+
+### 🐛 Bug 修复
+范围|描述|commitId
+--|--|--
+ - | 发大发发生的发大水发 | [0dec40e](https://github.com/supermanbin/vueSamples/commit/0dec40e)
 
 
 范围|描述|commitId
