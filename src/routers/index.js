@@ -22,6 +22,12 @@ const routes = [
       import(/* webpackChunkName: "spacex" */ "../views/Flex.vue"),
   },
   {
+    path: "/filter",
+    name: "Filter",
+    component: () =>
+      import(/* webpackChunkName: "spacex" */ "../views/SVGFilter.vue"),
+  },
+  {
     path: "/counter",
     name: "Counter",
     redirect: "/counter/pureVue",
