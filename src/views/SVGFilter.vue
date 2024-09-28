@@ -2,20 +2,22 @@
   <svg class="svg" preserveAspectRatio="xMidYMin slice" viewBox="0 0 0 0">
     <defs>
       <filter id="gaussianBlur" filterUnits="objectBoundingBox">
-        <feGaussianBlur
-          :in="state.blurSource"
-          :stdDeviation="state.blur"
-          result="blur"
-        />
-        <feOffset
-          in="blur"
-          :dx="state.offset.x"
-          :dy="state.offset.y"
-        ></feOffset>
-        <feMerge>
-          <feMergeNode></feMergeNode>
-          <feMergeNode :in="state.mergeSource"></feMergeNode>
-        </feMerge>
+
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+        <feColorMatrix
+          type="matrix"
+          values="1 0 0 0 0
+        0 1 0 0 0
+        1 0 1 0 0
+        0 0 0 1 0" result="matrix" />
+        <feComposite in="SourceGraphic" in2="matrix" operator="atop"></feComposite>
+
+<!--        <feOffset dx="-2" dy="-10"></feOffset>-->
+<!--        <feMerge>-->
+<!--          <feMergeNode in="matrix"></feMergeNode>-->
+<!--          <feMergeNode></feMergeNode>-->
+<!--          <feMergeNode in="SourceGraphic"></feMergeNode>-->
+<!--        </feMerge>-->
       </filter>
 
       <filter id="noise">
