@@ -1,4 +1,4 @@
-# 0.1.0 (2024-09-28)
+# 0.1.0 (2024-09-30)
 
 ### 🌟 新功能
 范围|描述|commitId
@@ -34,6 +34,7 @@
  solt | solt | [14be79c](https://github.com/supermanbin/vueSamples/commit/14be79c)
  spaceX request | 使用vuex做状态管理 | [80e1b68](https://github.com/supermanbin/vueSamples/commit/80e1b68)
  spaceX | spaceX | [f8ff03a](https://github.com/supermanbin/vueSamples/commit/f8ff03a)
+ - | svg filter | [10bf601](https://github.com/supermanbin/vueSamples/commit/10bf601)
  - | svg filter | [c241fb5](https://github.com/supermanbin/vueSamples/commit/c241fb5)
  - | test | [12559ea](https://github.com/supermanbin/vueSamples/commit/12559ea)
  - | use-vuex-counter | [82d33a4](https://github.com/supermanbin/vueSamples/commit/82d33a4)

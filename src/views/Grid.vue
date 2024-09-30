@@ -135,66 +135,6 @@
         </div>
       </div>
     </div>
-    <svg
-      class="content__img content__img--2"
-      width="500"
-      height="225"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 500 225"
-    >
-      <defs>
-        <filter id="displacementFilter2">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.1"
-            numOctaves="1"
-            result="noise"
-          ></feTurbulence>
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="noise"
-            result="displacement"
-            scale="100"
-            xChannelSelector="R"
-            yChannelSelector="G"
-          ></feDisplacementMap>
-          <feMorphology
-            operator="dilate"
-            radius="2"
-            result="morph"
-            in="displacement"
-          ></feMorphology>
-        </filter>
-        <mask id="circleMask2">
-          <circle
-            cx="50%"
-            cy="50%"
-            r="100"
-            data-value-final="950"
-            fill="white"
-            class="mask"
-            style="filter: url(#displacementFilter2)"
-          ></circle>
-        </mask>
-      </defs>
-      <image
-        xlink:href="../assets/2.jpg"
-        width="500"
-        height="225"
-        mask="url(#circleMask2)"
-        style="
-          translate: none;
-          rotate: none;
-          scale: none;
-          transform-origin: 0px 0px;
-          filter: brightness(150%);
-        "
-        data-svg-origin="500 225"
-        transform="matrix(1.2,0,0,1.2,-100,-45)"
-      ></image>
-    </svg>
   </div>
 
   <a-drawer

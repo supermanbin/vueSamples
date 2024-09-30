@@ -18,6 +18,7 @@ import {
 } from "ant-design-vue";
 
 import "@/assets/styles/index.less";
+import "v-tweakpane/dist/v-tweakpane.css";
 
 const app = createApp(App);
 app
